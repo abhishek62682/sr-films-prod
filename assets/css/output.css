@@ -304,6 +304,9 @@
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
+  .inset-2 {
+    inset: calc(var(--spacing) * 2);
+  }
   .inset-\[15px\] {
     inset: 15px;
   }
@@ -1439,6 +1442,9 @@
   }
   .px-0 {
     padding-inline: calc(var(--spacing) * 0);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
   }
   .px-2\.5 {
     padding-inline: calc(var(--spacing) * 2.5);
@@ -2988,6 +2994,11 @@
           }
         }
       }
+    }
+  }
+  .md\:inset-\[15px\] {
+    @media (width >= 48rem) {
+      inset: 15px;
     }
   }
   .md\:right-6 {
