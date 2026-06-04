@@ -1719,6 +1719,9 @@
   .text-\[42px\] {
     font-size: 42px;
   }
+  .text-\[44px\] {
+    font-size: 44px;
+  }
   .text-\[clamp\(36px\,5\.5vw\,80px\)\] {
     font-size: clamp(36px, 5.5vw, 80px);
   }
@@ -3315,6 +3318,12 @@
     @media (width >= 48rem) {
       --tw-leading: 1.35;
       line-height: 1.35;
+    }
+  }
+  .md\:font-medium {
+    @media (width >= 48rem) {
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
     }
   }
   .md\:backdrop-blur-none {
