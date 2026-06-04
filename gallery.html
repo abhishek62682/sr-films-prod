@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img/logo/favicon.png" type="image/x-icon">
+   <title>Interior Design Gallery in Mumbai & Navi Mumbai | Space4You</title>
+
+<meta name="description" content="Explore Space4You Interior Designs gallery featuring modern homes, modular kitchens, bedrooms, living rooms, salons, offices, and commercial interiors in Mumbai and Navi Mumbai." />
+    <link rel="stylesheet" href="./assets/css/output.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+
+
+     <!-- Floating WhatsApp + Call Buttons -->
+      <div
+        class="fixed bottom-0 left-0 right-0 z-50 h-[8svh] md:h-auto flex md:bottom-6 md:right-6 md:left-auto md:flex-col gap-0 sm:gap-2 p-0 bg-transparent backdrop-blur-sm md:backdrop-blur-none"
+      >
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/918850886835"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 md:flex-none inline-flex items-center justify-center bg-[#25D366] text-white md:w-12 md:h-12 md:rounded-full hover:bg-[#1ebe5d] active:scale-[0.97] transition-all duration-200 shadow-lg"
+          aria-label="Chat on WhatsApp"
+        >
+          <i class="ri-whatsapp-line text-xl"></i>
+          <span class="ml-2 text-sm font-semibold md:hidden">WhatsApp</span>
+        </a>
+
+        <!-- Call -->
+        <a
+          href="tel:+918850886835"
+          class="flex-1 md:flex-none inline-flex items-center justify-center bg-black text-white md:w-12 md:h-12 md:rounded-full hover:bg-neutral-800 active:scale-[0.97] transition-all duration-200 shadow-lg"
+          aria-label="Call us now"
+        >
+          <i class="ri-phone-line text-xl"></i>
+          <span class="ml-2 text-sm font-semibold md:hidden">Call Now</span>
+        </a>
+      </div>
+
+      <!--  NAVBAR -->
+      <nav id="navbar" class="px-4 sm:px-6 md:px-12 lg:px-16 pt-8">
+        <div
+          class="flex items-center justify-between bg-black/70 backdrop-blur-md border border-white/10 rounded-xl px-4 py-2.5"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              class="w-10 h-10 rounded-[8px] object-cover border border-yellow-700/40"
+              src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
+              alt="SR Film Photography Logo"
+            />
+           <div class="flex flex-col">
+        <span class="text-sm font-semibold text-white leading-none">SR Films</span>
+        <span class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5">Photography</span>
+      </div>
+          </div>
+
+         <ul class="hidden md:flex items-center gap-6 lg:gap-8">
+  <li>
+    <a
+      href="#"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Home</a
+    >
+  </li>
+  <li>
+    <a
+      href="#about"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >About Us</a
+    >
+  </li>
+  <li>
+    <a
+      href="#services"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Services</a
+    >
+  </li>
+  <li>
+    <a
+      href="#why-choose-us"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Why Choose Us</a
+    >
+  </li>
+  <li>
+    <a
+      href="#gallery"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Our Work</a
+    >
+  </li>
+  <li>
+    <a
+      href="#testimonials"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Testimonials</a
+    >
+  </li>
+  <li>
+    <a
+      href="#contact"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Contact Us</a
+    >
+  </li>
+</ul>
+
+          <div class="flex items-center gap-3">
+           
+            <button
+              class="hidden group relative overflow-hidden transition-all duration-300 md:block bg-white text-black text-sm font-medium px-6 py-2  rounded-lg hover:bg-gray-100 transition-colors"
+            >
+                            <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+                            <span class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white">Book a Session</span>
+               
+            </button>
+            <button
+              onclick="openSidebar()"
+              class="md:hidden flex flex-col gap-[5px] p-2"
+              aria-label="Open menu"
+            >
+              <span class="block w-6 h-0.5 bg-white rounded"></span>
+              <span class="block w-6 h-0.5 bg-white rounded"></span>
+              <span class="block w-4 h-0.5 bg-white rounded"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    <!-- Mobile Sidebar -->
+<div
+  id="mobile-sidebar"
+  class="fixed inset-y-0 right-0 w-72  bg-white z-[200] shadow-2xl flex flex-col p-8 gap-6"
+>
+  <div class="flex justify-between items-center">
+    <!-- Logo instead of "Kindle" -->
+    <div class="flex items-center gap-3">
+      <img
+        class="w-9 h-9 rounded-[8px] object-cover border border-yellow-700/40"
+        src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
+        alt="SR Film Photography Logo"
+      />
+      <div class="flex flex-col">
+        <span class="text-sm font-semibold text-gray-900 leading-none">SR Films</span>
+        <span class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5">Photography</span>
+      </div>
+    </div>
+    <button
+      onclick="closeSidebar()"
+      class="p-2 text-gray-500 hover:text-gray-900"
+    >
+      <i class="ri-close-line text-2xl"></i>
+    </button>
+  </div>
+
+  <ul class="flex flex-col gap-5 mt-4">
+    <li>
+      <a href="#" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Home</a>
+    </li>
+    <li>
+      <a href="#about" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">About Us</a>
+    </li>
+    <li>
+      <a href="#services" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Services</a>
+    </li>
+    <li>
+      <a href="#why-choose-us" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Why Choose Us</a>
+    </li>
+    <li>
+      <a href="#gallery" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Our Work</a>
+    </li>
+    <li>
+      <a href="#testimonials" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Testimonials</a>
+    </li>
+    <li>
+      <a href="#contact" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Contact Us</a>
+    </li>
+  </ul>
+
+  <a  href="https://wa.me/918850886835"
+              class=" group mt-auto relative overflow-hidden transition-all duration-300 md:block bg-white text-black text-center text-sm font-medium px-6 py-4  rounded-full hover:bg-gray-100 transition-colors"
+            >
+                            <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+                            <span class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white">Book a Session</span>
+               
+</a>
+
+</div>
+      <div
+        id="sidebar-overlay"
+        onclick="closeSidebar()"
+        class="fixed inset-0 bg-black/40 z-[150] hidden"
+      ></div>
+
+
+
+   
+    
+    
+   <section
+  class="relative h-[50vh] sm:h-[55vh] lg:h-[60vh] flex items-end overflow-hidden"
+>
+  <img
+    src="https://cdn.prod.website-files.com/69dcca29a71a4cd598efb43c/69dcca29a71a4cd598efb48b_Tropical%20Greenery%201-about%20background%20image.webp"
+    alt="SR Film Photography gallery banner"
+    class="absolute inset-0 w-full h-full object-cover object-top"
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/80"
+  ></div>
+
+  <div
+    class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14"
+  >
+    <div class="flex items-center gap-2 text-xs sm:text-sm mb-4">
+  <a href="index.html" class="text-white/70 hover:text-white transition-colors duration-200">Home</a>
+  <span class="text-white/30">/</span>
+  <a href="index.html#services" class="text-white/70 hover:text-white transition-colors duration-200">Services</a>
+  <span class="text-white/30">/</span>
+  <span class="text-[#efe7da] font-medium">Gallery</span>
+</div>
+    <h1
+      class="font-primary text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-tight tracking-tight"
+    >
+      Our Gallery
+    </h1>
+    <p class="mt-3 text-sm sm:text-base text-white/50 max-w-md">
+      Every frame tells a story  explore our collection of timeless moments.
+    </p>
+  </div>
+</section>
+
+    <section class="bg-light-cream mb-[53.88px] md:mb-0 py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div id="chipNav" class="flex gap-2 overflow-x-auto no-scrollbar pb-1"></div>
+
+    <ul
+      id="cardGrid"
+      class="list-none p-0 m-0 mt-10 sm:mt-12
+             columns-1 sm:columns-2 lg:columns-3 xl:columns-4
+             gap-x-4 sm:gap-x-5"
+    ></ul>
+  </div>
+</section>
+
+    <section
+        class="relative py-[80px] md:py-[100px] px-4 sm:px-6 md:px-8 lg:px-10 overflow-hidden"
+      >
+        <video
+          class="absolute inset-0 w-full h-full object-cover"
+          src="./assets/media/cta.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto text-center space-y-6">
+          <!-- <span
+            class="font-secondary font-semibold text-gold text-[14px]   block"
+          >
+            (Free Consultation)
+          </span> -->
+
+          <h2
+            class="font-primary text-white text-[clamp(36px,5.5vw,80px)] leading-[1.1]"
+          >
+            Ready to Transform<br />Your Dream Space?
+          </h2>
+
+          <p
+            class="font-secondary text-white/70 text-[16px] md:text-[17px] leading-[1.8] font-light max-w-xl mx-auto"
+          >
+            Whether it's a full home renovation, a modular kitchen, or a custom
+            bedroom, our designers are one call away from making it real.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a
+              href="#contact"
+              class="inline-flex group items-center gap-2 bg-accent text-black text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-white hover:text-warm transition-all duration-300 hover:shadow-lg active:scale-[0.97]"
+            >
+              Book a Consultation
+              <div
+                class="relative w-4 h-4 overflow-hidden flex items-center justify-center"
+              >
+                <i
+                  class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                ></i>
+                <i
+                  class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                ></i>
+              </div>
+            </a>
+
+            <a
+              href="tel:+918850886835"
+              class="inline-flex group items-center gap-2 bg-white/10 border border-white/25 text-white px-8 py-3.5 rounded-full font-secondary font-semibold text-[14px] hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-sm"
+            >
+              Call Us Now
+
+              <div
+                class="relative w-4 h-4 overflow-hidden flex items-center justify-center"
+              >
+                <i
+                  class="ri-phone-line absolute text-base text-current transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                ></i>
+
+                <i
+                  class="ri-phone-line absolute text-base text-current -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                ></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+          <footer
+        class="bg-black mb-[53.88px] md:mb-0 text-white"
+        aria-label="Site footer"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pb-2 lg:px-0 pt-16 sm:pt-18">
+          <!-- Top Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-10 lg:gap-12 pb-12 lg:pb-14 border-b border-white/8"
+          >
+            <!-- Brand -->
+            <div class="flex flex-col gap-6">
+              <div>
+                <img class="w-50" src="./assets/img/logo/logo.png" alt="" />
+              </div>
+              <p
+                class="font-secondary text-sm text-white/50 leading-7 max-w-[280px]"
+              >
+We design affordable, modern, and functional interiors tailored to your lifestyle from cosy homes to elegant commercial spaces across Mumbai and Navi Mumbai.
+              </p>
+
+              <!-- Social Icons -->
+              <div class="flex gap-3" aria-label="Social media links">
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/space4you_interiordesigns/?hl=en"
+                  aria-label="Follow us on Instagram"
+                  class="size-11 rounded-full border border-white/12 flex items-center justify-center text-white/50 hover:border-pink-500 hover:text-pink-500 transition-all duration-200"
+                >
+                  <i class="ri-instagram-line font-medium text-lg"></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/veneetachouhan/?ref=PROFILE_EDIT_xav_ig_profile_page_web"
+                  aria-label="Follow us on Facebook"
+                  class="size-11 rounded-full border border-white/12 flex items-center justify-center text-white/50 hover:border-blue-600 hover:text-blue-600 transition-all duration-200"
+                >
+                  <i class="ri-facebook-fill text-lg"></i>
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/@Space4uInteriorstudio"
+                  aria-label="Subscribe on YouTube"
+                  class="size-11 rounded-full border border-white/12 flex items-center justify-center text-white/50 hover:border-red-600 hover:text-red-600 transition-all duration-200"
+                >
+                  <i class="ri-youtube-line text-lg"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Expertise -->
+            <nav aria-label="Expertise links">
+              <h4 class="font-secondary text-xs text-white/40 font-medium mb-5">
+                Expertise
+              </h4>
+              <ul class="space-y-3 list-none p-0 m-0">
+                <li>
+                  <a
+                    href="gallery.html?category=residential"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Residential Interior Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=kitchen"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Modular Kitchen Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=living"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Living Room Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=bedroom"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Bedroom Renovation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=bathroom"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Bathroom Renovation</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=pooja"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Pooja Room Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=commercial"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Commercial and Shops Interior</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=lighting"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Lighting & Ceiling Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="gallery.html?category=furniture"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Custom Furniture & Cabinetry</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Navigation -->
+            <nav aria-label="Navigation links">
+              <h4 class="font-secondary text-xs text-white/40 font-medium mb-5">
+                Navigation
+              </h4>
+              <ul class="space-y-3 list-none p-0 m-0">
+                <li>
+                  <a
+                    href="/"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/#about"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/#expertise"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Expertise</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/#why-choose-us"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Why Choose Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/#process"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Our Process</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="/#gallery"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Gallery</a
+                  >
+                </li>
+                <!-- <li>
+                  <a
+                    href="/#our-work"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Our Work</a
+                  >
+                </li> -->
+                <li>
+                  <a
+                    href="/#contact"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Contact Info -->
+            <address class="not-italic">
+              <h4 class="font-secondary text-xs text-white/40 font-medium mb-5">
+                Contact
+              </h4>
+              <div class="flex flex-col gap-4">
+                <div>
+                 
+<p class="font-secondary text-xs text-white/40 font-medium mb-1">
+  Office Address
+</p>
+
+<a
+  href="https://www.google.com/maps/place/Space+4+you+Interior+Designs/@19.0390978,73.0948968,17z/data=!3m1!4b1!4m6!3m5!1s0xbcb654a93726b0d:0x16aaae87c30592ee!8m2!3d19.0390927!4d73.0974717!16s%2Fg%2F11lyvrf12s?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+  target="_blank"
+  class="font-secondary text-sm text-white/60 no-underline transition-colors duration-200 hover:text-white"
+>
+  Shop No. 20, Sai Proviso Icon,
+  Roadpali, Sector 17,
+  Kalamboli, Panvel,
+  Maharashtra 410218
+</a>
+                </div>
+                <div>
+                  <p
+                    class="font-secondary text-xs text-white/40 font-medium mb-1"
+                  >
+                    Phone
+                  </p>
+                  <a
+                    href="tel:+918850886835"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >+91 88508 86835</a
+                  >
+                </div>
+                <div>
+                  <p
+                    class="font-secondary text-xs text-white/40 font-medium mb-1"
+                  >
+                    Email
+                  </p>
+                  <a
+                    href="mailto:space4u93@gmail.com"
+                    class="font-secondary text-sm text-white/60 hover:text-accent transition-colors duration-200 no-underline relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+                    >space4u93@gmail.com</a
+                  >
+                </div>
+                <div>
+                  <p
+                    class="font-secondary text-xs text-white/40 font-medium mb-1"
+                  >
+                    Working Hours
+                  </p>
+
+                  <p class="font-secondary text-sm text-white/60">
+                    <span class="block mb-1"
+                      >Mon – Thu, 10:00 AM – 8:00 PM</span
+                    >
+                    <span class="block">Fri – Sun, 10:30 AM – 9:00 PM</span>
+                  </p>
+                </div>
+              </div>
+            </address>
+          </div>
+          <!-- /Top Grid -->
+
+          <!-- Bottom Bar -->
+           <div class="flex flex-wrap items-center justify-between gap-4 py-5">
+  
+  <p class="font-secondary text-xs text-white/25">
+    © <span id="year"></span> Space4You Interiors. All rights reserved.
+  </p>
+
+  <div class="flex items-center gap-4">
+    
+    <!-- Sitemap Link -->
+    <a
+      href="/sitemap.xml"
+      target="_blank"
+      class="text-white/30 text-xs no-underline hover:text-white transition-colors"
+    >
+      Sitemap
+    </a>
+
+    <!-- Credit -->
+    <p class="font-secondary text-xs text-white/25">
+      Designed & Developed by
+      <a
+        href="https://wa.me/918928862682"
+        target="_blank"
+        class="text-white/45 font-medium no-underline relative inline-block transition-colors duration-200 hover:text-accent
+        after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+      >
+        Raino Studios
+      </a>
+    </p>
+
+  </div>
+
+</div>
+       
+        </div>
+      </footer>
+
+     
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+
+
+    <script type="module" src="./assets/js/gallery.js"></script>
+    <script src="./assets/js/mobile-menu.js"></script>
+    <script src="./assets/js/loader.js"></script>
+
+   
+
+      <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+
+      <script src="./assets/js/init.js"></script>
+      
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VN2QYHGMD4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VN2QYHGMD4');
+</script>
+      
+  </body>
+</html>

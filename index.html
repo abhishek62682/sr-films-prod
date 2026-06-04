@@ -1,0 +1,2352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/img/logo/favicon.png"
+      type="image/x-icon"
+    />
+
+    <title>Wedding & Event Photography in Mumbai | SR Film Photography</title>
+
+    <meta
+      name="description"
+      content="SR Film Photography specialises in wedding photography, pre-wedding shoots, cinematic wedding films, maternity, baby & kids, and event photography in Mumbai."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"
+    />
+
+    <link rel="stylesheet" href="./assets/css/output.css" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      /* Navbar hide/show on scroll */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        transform: translateY(0);
+        transition:
+          transform 0.35s ease,
+          background 0.3s ease;
+      }
+
+      #navbar.hidden-nav {
+        transform: translateY(-110%);
+      }
+      /* Mobile sidebar */
+      #mobile-sidebar {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      #mobile-sidebar.open {
+        transform: translateX(0);
+      }
+      /* ── TESTIMONIALS MARQUEE ── */
+      .testi-track {
+        display: flex;
+        gap: 20px;
+        width: max-content;
+        animation: scroll-left 38s linear infinite;
+      }
+      .testi-track:hover {
+        animation-play-state: paused;
+      }
+      .testi-card {
+        width: 300px;
+        flex-shrink: 0;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .carousel-simple {
+        display: flex;
+        width: max-content;
+      }
+      @keyframes scroll-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .carousel-simple {
+        animation: scroll-left 22s linear infinite;
+      }
+      .carousel-simple:hover {
+        animation-play-state: paused;
+      }
+      .group-simple {
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        padding: 0 28px;
+      }
+      .card-simple {
+        display: flex;
+        align-items: center;
+        height: 36px;
+        opacity: 0.45;
+        filter: brightness(1.2);
+        transition: opacity 0.3s;
+      }
+      .card-simple:hover {
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+
+    
+    <div class="root w-full">
+     <!-- Floating WhatsApp + Call + QR Buttons -->
+<div
+  class="fixed bottom-0 left-0 right-0 z-50 h-[8svh] md:h-auto flex md:bottom-6 md:right-6 md:left-auto md:flex-col gap-0 sm:gap-2 p-0 bg-transparent backdrop-blur-sm md:backdrop-blur-none"
+>
+  <!-- QR Button — desktop only -->
+  <div class="relative hidden md:block group">
+    <button
+      class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-700 flex items-center justify-center hover:bg-gray-50 active:scale-[0.97] transition-all duration-200 shadow-lg"
+      aria-label="Scan QR code"
+    >
+      <i class="ri-qr-code-line text-xl"></i>
+    </button>
+
+    <!-- QR Popup — shows on hover -->
+    <div class="absolute bottom-14 right-0 bg-white rounded-2xl shadow-2xl p-4 w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+      <p class="text-xs font-semibold text-gray-700 text-center mb-3">Scan to View Portfolio</p>
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://sr-photography-kfu8.vercel.app/gallery.html&color=000000&bgcolor=ffffff&margin=2"
+        alt="QR Code to gallery"
+        class="w-full rounded-xl"
+      />
+      <p class="text-[10px] text-gray-400 text-center mt-3">Point your camera here</p>
+    </div>
+  </div>
+
+  <!-- WhatsApp -->
+  <a
+    href="https://wa.me/918850886835"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex-1 md:flex-none inline-flex items-center justify-center bg-[#25D366] text-white md:w-12 md:h-12 md:rounded-full hover:bg-[#1ebe5d] active:scale-[0.97] transition-all duration-200 shadow-lg"
+    aria-label="Chat on WhatsApp"
+  >
+    <i class="ri-whatsapp-line text-xl"></i>
+    <span class="ml-2 text-sm font-semibold md:hidden">WhatsApp</span>
+  </a>
+
+  <!-- Call -->
+  <a
+    href="tel:+918850886835"
+    class="flex-1 md:flex-none inline-flex items-center justify-center bg-black text-white md:w-12 md:h-12 md:rounded-full hover:bg-neutral-800 active:scale-[0.97] transition-all duration-200 shadow-lg"
+    aria-label="Call us now"
+  >
+    <i class="ri-phone-line text-xl"></i>
+    <span class="ml-2 text-sm font-semibold md:hidden">Call Now</span>
+  </a>
+</div>
+
+      <!--  NAVBAR -->
+      <nav id="navbar" class="px-4 sm:px-6 md:px-12 lg:px-16 pt-8">
+        <div
+          class="flex items-center justify-between bg-black/70 backdrop-blur-md border border-white/10 rounded-xl px-4 py-2.5"
+        >
+          <div class="flex items-center gap-3">
+            <img
+              class="w-10 h-10 rounded-[8px] object-cover border border-yellow-700/40"
+              src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
+              alt="SR Film Photography Logo"
+            />
+           <div class="flex flex-col">
+        <span class="text-sm font-semibold text-white leading-none">SR Films</span>
+        <span class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5">Photography</span>
+      </div>
+          </div>
+
+         <ul class="hidden md:flex items-center gap-6 lg:gap-8">
+  <li>
+    <a
+      href="#"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Home</a
+    >
+  </li>
+  <li>
+    <a
+      href="#about"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >About Us</a
+    >
+  </li>
+  <li>
+    <a
+      href="#services"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Services</a
+    >
+  </li>
+  <li>
+    <a
+      href="#why-choose-us"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Why Choose Us</a
+    >
+  </li>
+  <li>
+    <a
+      href="#gallery"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Our Work</a
+    >
+  </li>
+  <li>
+    <a
+      href="#testimonials"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Testimonials</a
+    >
+  </li>
+  <li>
+    <a
+      href="#contact"
+      class="text-sm text-white/90 hover:text-white transition-colors"
+      >Contact Us</a
+    >
+  </li>
+</ul>
+
+          <div class="flex items-center gap-3">
+           
+            <button
+              class="hidden group relative overflow-hidden transition-all duration-300 md:block bg-white text-black text-sm font-medium px-6 py-2  rounded-lg hover:bg-gray-100 transition-colors"
+            >
+                            <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+                            <span class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white">Book a Session</span>
+               
+            </button>
+            <button
+              onclick="openSidebar()"
+              class="md:hidden flex flex-col gap-[5px] p-2"
+              aria-label="Open menu"
+            >
+              <span class="block w-6 h-0.5 bg-white rounded"></span>
+              <span class="block w-6 h-0.5 bg-white rounded"></span>
+              <span class="block w-4 h-0.5 bg-white rounded"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    <!-- Mobile Sidebar -->
+<div
+  id="mobile-sidebar"
+  class="fixed inset-y-0 right-0 w-72  bg-white z-[200] shadow-2xl flex flex-col p-8 gap-6"
+>
+  <div class="flex justify-between items-center">
+    <!-- Logo instead of "Kindle" -->
+    <div class="flex items-center gap-3">
+      <img
+        class="w-9 h-9 rounded-[8px] object-cover border border-yellow-700/40"
+        src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
+        alt="SR Film Photography Logo"
+      />
+      <div class="flex flex-col">
+        <span class="text-sm font-semibold text-gray-900 leading-none">SR Films</span>
+        <span class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5">Photography</span>
+      </div>
+    </div>
+    <button
+      onclick="closeSidebar()"
+      class="p-2 text-gray-500 hover:text-gray-900"
+    >
+      <i class="ri-close-line text-2xl"></i>
+    </button>
+  </div>
+
+  <ul class="flex flex-col gap-5 mt-4">
+    <li>
+      <a href="#" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Home</a>
+    </li>
+    <li>
+      <a href="#about" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">About Us</a>
+    </li>
+    <li>
+      <a href="#services" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Services</a>
+    </li>
+    <li>
+      <a href="#why-choose-us" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Why Choose Us</a>
+    </li>
+    <li>
+      <a href="#gallery" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Our Work</a>
+    </li>
+    <li>
+      <a href="#testimonials" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Testimonials</a>
+    </li>
+    <li>
+      <a href="#contact" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Contact Us</a>
+    </li>
+  </ul>
+
+  <a  href="https://wa.me/918850886835"
+              class=" group mt-auto relative overflow-hidden transition-all duration-300 md:block bg-white text-black text-center text-sm font-medium px-6 py-4  rounded-full hover:bg-gray-100 transition-colors"
+            >
+                            <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+                            <span class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white">Book a Session</span>
+               
+</a>
+
+</div>
+      <div
+        id="sidebar-overlay"
+        onclick="closeSidebar()"
+        class="fixed inset-0 bg-black/40 z-[150] hidden"
+      ></div>
+
+      <header class="w-full h-screen relative">
+        <!-- Nav + content -->
+        <div
+          class="hero__frame-group space-y-[14px] max-w-[1340px] h-full mx-auto relative z-[99] px-4 xl:px-0"
+        >
+          <!-- Hero content -->
+          <div
+            class="hero__frame-content w-full absolute bottom-[100px] left-0 space-y-[14px] px-16 xl:px-0"
+          >
+            <div class="space-y-2">
+              <div
+                class="w-fit flex gap-[7px] items-center font-secondary bg-[#0003] rounded-[20px] py-[5px] px-[12px] backdrop-blur-lg text-white"
+              >
+                <i class="ri-map-pin-2-fill text-[13px]"></i>
+                <span class="text-[13px] leading-[20px]"
+                  >Based in Pune, Maharashtra</span
+                >
+              </div>
+              <div
+                id="hero-heading"
+                class="font-primary font-medium text-white text-[32px] sm:text-[44px] md:text-[64px] leading-[1.1]"
+              >
+                <h2>Capturing love stories</h2>
+                <h2>that last forever</h2>
+              </div>
+            </div>
+
+            <div
+              class="hero-middle-content flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+            >
+              <p
+                id="hero-sub"
+                class="text-[#e7e7e7] max-w-md text-[15px] md:text-[16px] leading-[24px]"
+              >
+                Authentic wedding films and timeless photographs that preserve
+                every emotion, detail, and unforgettable moment of your special
+                day.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__frame-overlay absolute top-0 left-0 w-full h-full">
+          <div
+            class="hero__frame-img rounded-[10px] overflow-hidden inset-[15px] absolute"
+          >
+            <!-- Swiper -->
+            <div class="swiper heroSwiper w-full h-full">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide !w-full !h-full">
+                  <img
+                    class="w-full h-full object-cover"
+                    src="https://marshmallowstudios.in/wp-content/uploads/2023/12/PurvaRohanWedding-889-1-scaled.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide !w-full !h-full relative">
+                  <img
+                    class="w-full h-full object-cover"
+                    src="https://marshmallowstudios.in/wp-content/uploads/2023/09/Bharti-Ajay-101-1-scaled.jpg"
+                    alt=""
+                  />
+                  <div
+                    class="overlay bg-[#09090973] absolute inset-0 w-full h-full z-10"
+                  ></div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination !bottom-4 !z-[9990]"></div>
+              </div>
+
+              <!-- Overlay -->
+            </div>
+
+            <style>
+              .heroSwiper {
+                width: 100%;
+                height: 100%;
+              }
+
+              .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+              }
+
+              .swiper-slide {
+                width: 100%;
+                height: 100%;
+              }
+
+              .swiper-pagination-bullet {
+                background: rgba(255, 255, 255, 0.5);
+                width: 10px;
+                height: 10px;
+                transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+                opacity: 0.8;
+              }
+
+              .swiper-pagination-bullet-active {
+                background: white;
+                width: 30px;
+                border-radius: 24px;
+                opacity: 1;
+              }
+            </style>
+          </div>
+        </div>
+
+        <!-- Mobile menu drawer -->
+        <div
+          id="mobile-menu"
+          class="mobile-menu fixed top-0 right-0 h-full w-[280px] bg-ink z-[200] flex flex-col pt-20 px-8 gap-8"
+        >
+          <button
+            id="close-menu"
+            class="absolute top-6 right-6 text-white text-2xl"
+          >
+            <i class="ri-close-line"></i>
+          </button>
+          <a
+            href="#projects"
+            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
+            onclick="closeMobileMenu()"
+            >Projects</a
+          >
+          <a
+            href="#lookbook"
+            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
+            onclick="closeMobileMenu()"
+            >Lookbook</a
+          >
+          <a
+            href="#about"
+            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
+            onclick="closeMobileMenu()"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
+            onclick="closeMobileMenu()"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="text-white text-[20px] font-primary font-medium"
+            onclick="closeMobileMenu()"
+            >Contact</a
+          >
+        </div>
+        <div
+          id="menu-overlay"
+          class="hidden fixed inset-0 bg-black/50 z-[150]"
+          onclick="closeMobileMenu()"
+        ></div>
+      </header>
+
+   <!-- ABOUT SECTION -->
+<section id="about" aria-labelledby="about-heading" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="space-y-16">
+     <div class="about-top">
+       <span class="text-sm font-medium text-[#a88b6a]"
+              >About Us</span
+            >
+ 
+  <div class="grid grid-cols-12 gap-6 mt-3">
+    <div class="hidden lg:block lg:col-span-4"></div>
+    <p class="col-span-12 lg:col-span-8 text-xl sm:text-2xl lg:text-[36px] uppercase font-bold leading-[1.3] sm:leading-[1.25] lg:leading-[40px] text-gray-900">
+      I don't simply shoot images
+      <img class="inline size-8 sm:size-10 lg:size-12 mx-1 sm:mx-1.5 align-middle" src="https://framerusercontent.com/images/YPbqvsgTh7mexKu0xFUEcptuSc.png?width=512&height=512" alt="">
+      i carefully preserve
+      <img class="inline size-8 sm:size-10 lg:size-12 mx-1 sm:mx-1.5 align-middle" src="https://framerusercontent.com/images/D2caWVflYcWHVgAwKcrPidEH56w.png?scale-down-to=512&width=1024&height=1024" alt="">
+      genuine feelings, quiet details, and the hidden stories
+      <img class="inline size-8 sm:size-10 lg:size-12 mx-1 sm:mx-1.5 align-middle" src="https://framerusercontent.com/images/cNRTJixJYM4WR4uStzZs3qwhBs.png?scale-down-to=512&width=1024&height=1024" alt="">
+      that make every moment truly meaningful.
+    </p>
+  </div>
+</div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-t border-gray-300">
+
+        <!-- Top Row -->
+        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300">
+          <img class="w-full h-full object-cover" src="./assets/img/image/image-91.webp" alt="">
+        </div>
+
+        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+
+        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300 p-6 flex flex-col justify-between">
+          <span class="text-sm font-bold uppercase tracking-wide">My Mission</span>
+          <p class="text-sm text-gray-600 font-medium uppercase">To capture authentic stories through timeless, emotional, and honest photography.</p>
+        </div>
+
+        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+
+        <!-- Bottom Row -->
+        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+
+        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300 p-6 flex flex-col justify-between">
+          <span class="text-sm font-bold uppercase tracking-wide">My Vision</span>
+          <p class="text-sm text-gray-600 font-medium uppercase">To create meaningful imagery that inspires connection and lasting memories.</p>
+        </div>
+
+        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+
+        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300">
+          <img class="w-full h-full object-cover" src="./assets/img/image/image-32.webp" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- SERVICES SECTION -->
+
+      <section
+        id="services"
+        aria-labelledby="services-heading"
+        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-light-cream"
+      >
+        <div class="max-w-7xl mx-auto">
+          <!-- Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-12 sm:mb-16"
+          >
+            <div>
+              <span class="text-sm font-medium text-[#a88b6a]"
+              >What We Capture</span
+            >
+               
+              
+              <h2
+                id="services-heading"
+                class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight tracking-normal mt-3"
+              >
+                Stories Told Through Every Frame
+              </h2>
+            </div>
+            <p
+              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl "
+            >
+               From sacred wedding moments to the tender first days of life, we
+              craft timeless visual stories that you'll treasure for
+              generations.
+            </p>
+            
+          </div>
+
+          <!-- Cards Grid -->
+          <ul
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0"
+          >
+            <!-- Card 1 — Wedding Photography -->
+            <li class="group flex flex-col">
+              <a
+                href="gallery.html?category=wedding-photography"
+                class="flex flex-col gap-4 cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-94.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-2.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-3.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-4.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-5.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-6.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-7.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-8.webp"
+                          alt="Wedding Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative overflow-hidden h-7">
+                    <span
+                      class="block text-sm sm:text-base font-semibold text-gray-900 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"
+                      >Wedding Photography</span
+                    >
+                    <span
+                      class="absolute inset-0 block text-sm sm:text-base font-semibold text-gray-900 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      >Wedding Photography</span
+                    >
+                  </div>
+                  <div
+                    class="relative size-4 overflow-hidden flex items-center justify-center"
+                  >
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                    ></i>
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 2 — Pre-Wedding Shoots -->
+            <li class="group flex flex-col">
+              <a
+                href="gallery.html?category=pre-wedding"
+                class="flex flex-col gap-4 cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-75.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-10.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-11.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-12.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-13.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-14.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-15.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-16.webp"
+                          alt="Pre-Wedding Shoot by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative overflow-hidden h-7">
+                    <span
+                      class="block text-sm sm:text-base font-semibold text-gray-900 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"
+                      >Pre-Wedding Shoots</span
+                    >
+                    <span
+                      class="absolute inset-0 block text-sm sm:text-base font-semibold text-gray-900 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      >Pre-Wedding Shoots</span
+                    >
+                  </div>
+                  <div
+                    class="relative size-4 overflow-hidden flex items-center justify-center"
+                  >
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                    ></i>
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 3 — Cinematic Wedding Films -->
+            <li class="group flex flex-col">
+              <a
+                href="gallery.html?category=cinematic-films"
+                class="flex flex-col gap-4 cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-17.webp"
+                          alt="Cinematic Wedding Film by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-18.webp"
+                          alt="Cinematic Wedding Film by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-19.webp"
+                          alt="Cinematic Wedding Film by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-21.webp"
+                          alt="Cinematic Wedding Film by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-22.webp"
+                          alt="Cinematic Wedding Film by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-24.webp"
+                          alt="Cinematic Wedding Film by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative overflow-hidden h-7">
+                    <span
+                      class="block text-sm sm:text-base font-semibold text-gray-900 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"
+                      >Cinematic Wedding Films</span
+                    >
+                    <span
+                      class="absolute inset-0 block text-sm sm:text-base font-semibold text-gray-900 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      >Cinematic Wedding Films</span
+                    >
+                  </div>
+                  <div
+                    class="relative size-4 overflow-hidden flex items-center justify-center"
+                  >
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                    ></i>
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 4 — Maternity Photography -->
+            <li class="group flex flex-col">
+              <a
+                href="gallery.html?category=maternity"
+                class="flex flex-col gap-4 cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-25.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-82.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-27.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-28.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-29.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-30.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-31.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-32.webp"
+                          alt="Maternity Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative overflow-hidden h-7">
+                    <span
+                      class="block text-sm sm:text-base font-semibold text-gray-900 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"
+                      >Maternity Photography</span
+                    >
+                    <span
+                      class="absolute inset-0 block text-sm sm:text-base font-semibold text-gray-900 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      >Maternity Photography</span
+                    >
+                  </div>
+                  <div
+                    class="relative size-4 overflow-hidden flex items-center justify-center"
+                  >
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                    ></i>
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 5 — Baby & Kids Photography -->
+            <li class="group flex flex-col">
+              <a
+                href="gallery.html?category=baby-kids"
+                class="flex flex-col gap-4 cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-33.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-34.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-35.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-36.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-37.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-38.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-39.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-40.webp"
+                          alt="Baby & Kids Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative overflow-hidden h-7">
+                    <span
+                      class="block text-sm sm:text-base font-semibold text-gray-900 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"
+                      >Baby & Kids Photography</span
+                    >
+                    <span
+                      class="absolute inset-0 block text-sm sm:text-base font-semibold text-gray-900 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      >Baby & Kids Photography</span
+                    >
+                  </div>
+                  <div
+                    class="relative size-4 overflow-hidden flex items-center justify-center"
+                  >
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                    ></i>
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <!-- Card 6 — Event Photography -->
+            <li class="group flex flex-col">
+              <a
+                href="gallery.html?category=events"
+                class="flex flex-col gap-4 cursor-pointer"
+              >
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-41.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-42.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-43.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-44.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-45.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-46.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-47.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img
+                          class="w-full h-full object-cover"
+                          decoding="async"
+                          src="./assets/img/image/image-48.webp"
+                          alt="Event Photography by SR Film Photography"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="relative overflow-hidden h-7">
+                    <span
+                      class="block text-sm sm:text-base font-semibold text-gray-900 transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0"
+                      >Event Photography</span
+                    >
+                    <span
+                      class="absolute inset-0 block text-sm sm:text-base font-semibold text-gray-900 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                      >Event Photography</span
+                    >
+                  </div>
+                  <div
+                    class="relative size-4 overflow-hidden flex items-center justify-center"
+                  >
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base transition-all duration-300 group-hover:translate-x-4 group-hover:-translate-y-4"
+                    ></i>
+                    <i
+                      class="ri-arrow-right-up-line absolute text-base -translate-x-4 translate-y-4 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0"
+                    ></i>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+        <section
+        id="gallery"
+        aria-labelledby="gallery-heading"
+        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 "
+      >
+        <div class="max-w-7xl mx-auto">
+          <!-- Header -->
+          <div class="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
+            <span class="text-sm font-medium text-[#a88b6a]">(Our Work)</span>
+            <h2
+              id="gallery-heading"
+              class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
+            >
+              Visual Stories in Every Frame
+            </h2>
+             <p
+              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
+            >
+              Explore our collection of candid moments, intimate details, and
+              breathtaking scenes that define each couple's unique love story.
+            </p>
+            
+          </div>
+
+          <!-- Gallery -->
+          <div class="wrapper mb-12">
+            <div class="gallery">
+              <img
+                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.09_PM__1__7xEQ-41dx.jpeg?tr=w-600,q-75"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.09_PM_jtmFo6PlY.jpeg?tr=w-600,q-75"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.10_PM__1__mU7tkCuFB.jpeg?tr=w-600,q-75"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.10_PM__2__x6se0kLY_.jpeg?tr=w-600,q-75"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.10_PM_9NG0HJ8ja.jpeg?tr=w-600,q-75"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.11_PM__1__Z-Zsq48T7.jpeg?tr=w-600,q-75"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/4c098537-78f9-4548-993e-f3117942f027/DSC_3323.jpg?format=750w"
+                alt="Wedding moment"
+              />
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/470dc361-ee10-4631-b141-71f51dfe5e08/PPP01335.jpg?format=750w"
+                alt="Wedding moment"
+              />
+            </div>
+          </div>
+
+          <!-- Button -->
+          <div class="flex justify-center">
+
+            <a href="gallery.html"
+              class=" group relative overflow-hidden transition-all duration-300 md:block bg-black text-white flex items-center hover:text-black text-sm font-medium px-6 py-4  rounded-full transition-colors"
+            >
+                            <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+                            <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">View Full Gallery</span>
+
+                           
+
+<span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
+  <i
+    class="ri-arrow-right-line  absolute hover:text-black inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"
+  ></i>
+
+  <i
+    class="ri-arrow-right-line absolute  inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"
+  ></i>
+</span>
+               
+          </a>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US SECTION -->
+      <section
+        id="why-choose-us"
+        aria-labelledby="why-choose-us-heading"
+        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#faf7f2]"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-12 sm:mb-16 max-w-3xl mx-auto text-center">
+            <span class="text-sm font-medium text-[#a88b6a]"
+              >Why Choose Us</span
+            >
+            <h2
+              id="why-choose-us-heading"
+              class="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-gray-900 mb-6 mt-3"
+            >
+              Why Families Trust<br />SR Film Photography
+            </h2>
+            <p
+              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
+            >
+              We don't just take photos  we preserve emotions, freeze fleeting
+              moments, and craft memories you'll pass down for generations.
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3"
+          >
+            <!-- Card 1 -->
+            <div
+              class="group bg-white border border-gray-200 hover:border-[#a88b6a]/40 hover:bg-white hover:shadow-md transition-all duration-300 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 cursor-pointer aspect-square hover:-translate-y-1"
+            >
+              <i
+                class="ri-camera-line text-2xl sm:text-4xl text-gray-400 group-hover:text-[#a88b6a] transition-colors duration-300"
+              ></i>
+              <h3
+                class="text-[11px] sm:text-[13px] font-semibold text-gray-600 group-hover:text-gray-900 capitalize text-center transition-colors font-secondary"
+              >
+                Candid Experts
+              </h3>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="group bg-white border border-gray-200 hover:border-[#a88b6a]/40 hover:bg-white hover:shadow-md transition-all duration-300 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 cursor-pointer aspect-square hover:-translate-y-1"
+            >
+              <i
+                class="ri-heart-line text-2xl sm:text-4xl text-gray-400 group-hover:text-[#a88b6a] transition-colors duration-300"
+              ></i>
+              <h3
+                class="text-[11px] sm:text-[13px] font-semibold text-gray-600 group-hover:text-gray-900 capitalize text-center transition-colors font-secondary"
+              >
+                Personal Touch
+              </h3>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="group bg-white border border-gray-200 hover:border-[#a88b6a]/40 hover:bg-white hover:shadow-md transition-all duration-300 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 cursor-pointer aspect-square hover:-translate-y-1"
+            >
+              <i
+                class="ri-film-line text-2xl sm:text-4xl text-gray-400 group-hover:text-[#a88b6a] transition-colors duration-300"
+              ></i>
+              <h3
+                class="text-[11px] sm:text-[13px] font-semibold text-gray-600 group-hover:text-gray-900 capitalize text-center transition-colors font-secondary"
+              >
+                Cinematic Quality
+              </h3>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="group bg-white border border-gray-200 hover:border-[#a88b6a]/40 hover:bg-white hover:shadow-md transition-all duration-300 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 cursor-pointer aspect-square hover:-translate-y-1"
+            >
+              <i
+                class="ri-time-line text-2xl sm:text-4xl text-gray-400 group-hover:text-[#a88b6a] transition-colors duration-300"
+              ></i>
+              <h3
+                class="text-[11px] sm:text-[13px] font-semibold text-gray-600 group-hover:text-gray-900 capitalize text-center transition-colors font-secondary"
+              >
+                On-Time Delivery
+              </h3>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              class="group bg-white border border-gray-200 hover:border-[#a88b6a]/40 hover:bg-white hover:shadow-md transition-all duration-300 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 cursor-pointer aspect-square hover:-translate-y-1"
+            >
+              <i
+                class="ri-image-edit-line text-2xl sm:text-4xl text-gray-400 group-hover:text-[#a88b6a] transition-colors duration-300"
+              ></i>
+              <h3
+                class="text-[11px] sm:text-[13px] font-semibold text-gray-600 group-hover:text-gray-900 capitalize text-center transition-colors font-secondary"
+              >
+                Premium Editing
+              </h3>
+            </div>
+
+            <!-- Card 6 -->
+            <div
+              class="group bg-white border border-gray-200 hover:border-[#a88b6a]/40 hover:bg-white hover:shadow-md transition-all duration-300 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center gap-3 sm:gap-4 cursor-pointer aspect-square hover:-translate-y-1"
+            >
+              <i
+                class="ri-customer-service-2-line text-2xl sm:text-4xl text-gray-400 group-hover:text-[#a88b6a] transition-colors duration-300"
+              ></i>
+              <h3
+                class="text-[11px] sm:text-[13px] font-semibold text-gray-600 group-hover:text-gray-900 capitalize text-center transition-colors font-secondary"
+              >
+                Dedicated Support
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+
+
+   
+
+      <style>
+        .wrapper {
+          display: grid;
+          place-items: center;
+          padding: 0;
+        }
+
+        .gallery {
+          --gap: 0.4rem;
+          --image-size: calc(80px - var(--gap)/2);
+          display: grid;
+          grid-template-columns: repeat(6, 200px);
+          grid-auto-rows: 200px;
+          gap: var(--gap);
+          transition: transform 0.4s;
+
+         
+
+          
+
+          & img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            grid-column: span 2;
+            transition:
+              clip-path 0.3s,
+              transform 0.8s,
+              filter 0.5s;
+
+            &:nth-of-type(4) {
+              grid-column: 2 / span 2;
+            }
+
+            &:hover {
+              display: block;
+              z-index: 100;
+              filter: brightness(1) saturate(1.2);
+              border-radius: 0.25rem;
+            }
+
+            &:not(:hover) {
+              animation: zIndexHack 0.5s;
+            }
+          }
+        }
+
+        /* Mobile - 2 columns side by side */
+        @media (max-width: 768px) {
+          .wrapper {
+            padding: 0;
+            place-items: start;
+            min-height: auto;
+          }
+
+          .gallery {
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: auto;
+            gap: var(--gap);
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+
+            & img {
+              grid-column: unset !important;
+              aspect-ratio: 1;
+              height: auto;
+            }
+
+            & img:nth-of-type(4) {
+              grid-column: unset !important;
+            }
+          }
+        }
+
+        /* Tablet - 3 columns */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .gallery {
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+
+            & img {
+              grid-column: 1 !important;
+            }
+
+            & img:nth-of-type(4) {
+              grid-column: 1 !important;
+            }
+          }
+        }
+
+        @keyframes zIndexHack {
+          0%,
+          100% {
+            z-index: 1;
+          }
+        }
+      </style>
+
+      <!-- TESTIMONIALS SECTION -->
+      <section
+        id="testimonials"
+        class="relative z-[12] overflow-hidden"
+        data-scroll-section
+      >
+        <div
+          class="bg-[#f6f3ec] w-full px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-24 lg:py-40 flex flex-col lg:flex-row gap-8 lg:gap-16"
+        >
+          <!-- LEFT -->
+          <div
+            class="flex flex-col gap-8 lg:gap-12 w-full lg:w-[65%] overflow-hidden"
+          >
+            <div
+              class="flex items-start sm:items-end justify-between gap-4 flex-wrap"
+            >
+              <div>
+                <span class="text-sm font-medium text-[#a88b6a]"
+              >(Testimonials)</span
+            >
+               
+                <h2
+                  class="text-[8vw] sm:text-[6vw] lg:text-[5vw] leading-none font-normal text-[#633b2c] font-primary"
+                >
+                  Love stories <br />
+                  our couples say
+                </h2>
+              </div>
+            <div class="flex items-center gap-3">
+  <div
+    class="carousel-left w-10 h-10 bg-[#efe7da] text-[#a88b6a] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#a88b6a] hover:text-white transition-colors duration-300"
+  >
+    <i class="ri-arrow-left-line text-base font-semibold"></i>
+  </div>
+  <div
+    class="carousel-right w-10 h-10 bg-[#efe7da] text-[#a88b6a] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#a88b6a] hover:text-white transition-colors duration-300"
+  >
+    <i class="ri-arrow-right-line text-base font-semibold"></i>
+  </div>
+</div>
+            </div>
+
+            <div class="swiper mySwiper testimonial-swiper overflow-hidden">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide !bg-white !rounded-[24px] !p-7 !flex !flex-col !justify-between min-h-[220px]"
+                >
+                  <div class="flex flex-col gap-3">
+                    <img
+                      src="https://framerusercontent.com/images/nBmS1U8s92WIveVNePAFLYYFODo.svg?width=60&height=12"
+                      alt="stars"
+                      class="w-14"
+                    />
+                    <p class="text-[#7a685d] text-[15px] leading-relaxed">
+                      Our wedding photos turned out absolutely magical. Every
+                      moment was captured so naturally and beautifully. We
+                      couldn't have asked for a better experience!
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 mt-8">
+                    <img
+                      src="https://lh3.googleusercontent.com/a-/ALV-UjXjJRaPtAHqavR_kvY46i-C5QbUqfi4EubHGTYE_6eHx51ssedG=w72-h72-p-rp-mo-br100"
+                      alt="Riya"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <h5 class="text-[#7a685d] text-sm font-semibold">
+                        Riya <span class="font-secondary">&amp;</span> Arjun
+                      </h5>
+                      <p class="text-[#7a685d] text-xs font-normal">
+                        Wedding Couple
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="swiper-slide !bg-white !rounded-[24px] !p-7 !flex !flex-col !justify-between min-h-[220px]"
+                >
+                  <div class="flex flex-col gap-3">
+                    <img
+                      src="https://framerusercontent.com/images/nBmS1U8s92WIveVNePAFLYYFODo.svg?width=60&height=12"
+                      alt="stars"
+                      class="w-14"
+                    />
+                    <p class="text-[#7a685d] text-[15px] leading-relaxed">
+                      The cinematic video felt like a movie of our love story.
+                      Every detail was captured so perfectly — highly
+                      recommended!
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 mt-8">
+                    <img
+                      src="https://lh3.googleusercontent.com/a-/ALV-UjWFU_SKrxF1OVifAN6C5PfuBjwq5PuSfsifeXDbvrDP-fG_ZJiP=w72-h72-p-rp-mo-br100"
+                      alt="Neha"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <h5 class="text-[#7a685d] text-sm font-semibold">
+                        Neha <span class="font-secondary">&amp;</span> Karan
+                      </h5>
+                      <p class="text-[#7a685d] text-xs font-normal">
+                        Wedding Couple
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="swiper-slide !bg-white !rounded-[24px] !p-7 !flex !flex-col !justify-between min-h-[220px]"
+                >
+                  <div class="flex flex-col gap-3">
+                    <img
+                      src="https://framerusercontent.com/images/nBmS1U8s92WIveVNePAFLYYFODo.svg?width=60&height=12"
+                      alt="stars"
+                      class="w-14"
+                    />
+                    <p class="text-[#7a685d] text-[15px] leading-relaxed">
+                      From pre-wedding shoot to final album, everything was
+                      smooth and professional. The photos are beyond perfect.
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 mt-8">
+                    <img
+                      src="https://lh3.googleusercontent.com/a-/ALV-UjVhTd50oCMlMDUZkv0UiGH-hIgFYV2ZRJLN5LIHGrgf4wQ0aBF2=w72-h72-p-rp-mo-ba2-br100"
+                      alt="Priya"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <h5 class="text-[#7a685d] text-sm font-semibold">
+                        Priya <span class="font-secondary">&amp;</span> Rohit
+                      </h5>
+                      <p class="text-[#7a685d] text-xs font-normal">
+                        Wedding Couple
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="swiper-slide !bg-white !rounded-[24px] !p-7 !flex !flex-col !justify-between min-h-[220px]"
+                >
+                  <div class="flex flex-col gap-3">
+                    <img
+                      src="https://framerusercontent.com/images/nBmS1U8s92WIveVNePAFLYYFODo.svg?width=60&height=12"
+                      alt="stars"
+                      class="w-14"
+                    />
+                    <p class="text-[#7a685d] text-[15px] leading-relaxed">
+                      They didn't just take photos — they captured emotions,
+                      laughter, and our entire journey beautifully.
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3 mt-8">
+                    <img
+                      src="https://lh3.googleusercontent.com/a-/ALV-UjWl1J7UF2Ungdpix-RnhIaevqCa4tAoIGJqD0mF3HMYR49a1F2E=w72-h72-p-rp-mo-br100"
+                      alt="Ananya"
+                      class="w-10 h-10 rounded-full object-cover"
+                    />
+                    <div>
+                      <h5 class="text-[#7a685d] text-sm font-semibold">
+                        Ananya
+                        <span class="font-secondary">&amp;</span> Siddharth
+                      </h5>
+                      <p class="text-[#7a685d] text-xs font-normal">
+                        Wedding Couple
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div
+            class="w-full lg:w-[35%] rounded-[28px] overflow-hidden relative min-h-[360px] sm:min-h-[500px]"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1722952934708-749c22eb2e58?q=80&w=987&auto=format&fit=crop"
+              alt="Wedding couple"
+              class="w-full h-full object-cover absolute inset-0"
+            />
+            <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+              <div
+                class="rounded-[20px] p-5 sm:p-6 flex flex-col items-center gap-2"
+                style="
+                  background: linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(152, 106, 62, 0.5) 100%
+                  );
+                  backdrop-filter: blur(30px);
+                "
+              >
+                <h4
+                  class="text-white text-[40px] sm:text-[46px] leading-tight font-normal font-primary"
+                >
+                  5.0
+                </h4>
+                <img
+                  src="https://framerusercontent.com/images/Acl1ppgvFjpXDaMWy2sV8Mlbvc.svg?width=70&height=13"
+                  alt="5 stars"
+                  class="w-16"
+                />
+                <p class="text-white text-xs font-medium tracking-wide">
+                  couples rating
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" aria-labelledby="contact-heading" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#f2eae1]">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Top Header — full width -->
+    <div class="mb-12 sm:mb-16">
+      <span class="text-sm font-medium text-[#a88b6a]">Get In Touch</span>
+      <h2 id="contact-heading" class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3">
+        Let's Create Beautiful<br />Memories Together
+      </h2>
+      <p class="text-gray-500 text-sm sm:text-base leading-relaxed mt-4 max-w-lg">
+        Whether it's your wedding, maternity journey, baby's first smile, or a special celebration, we're here to capture every moment beautifully.
+      </p>
+    </div>
+
+    <!-- Bottom Row: Left info+map | Right form -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+      <!-- LEFT — Contact Cards + Map -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Contact Cards — not full width -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="tel:+918850886835" class="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 hover:shadow-md transition-shadow duration-300 w-fit">
+            <span class="size-10 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]">
+              <i class="ri-phone-line"></i>
+            </span>
+            <div>
+              <p class="text-sm font-bold text-gray-900">Call Us</p>
+              <p class="text-sm text-gray-500">+91 88508 86835</p>
+            </div>
+          </a>
+
+          <a href="mailto:srfilmphotography@gmail.com" class="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 hover:shadow-md transition-shadow duration-300 w-fit">
+            <span class="size-10 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]">
+              <i class="ri-mail-line"></i>
+            </span>
+            <div>
+              <p class="text-sm font-bold text-gray-900">Email Us</p>
+              <p class="text-sm text-gray-500">srfilmphotography@gmail.com</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 w-fit">
+          <span class="size-10 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]">
+            <i class="ri-map-pin-line"></i>
+          </span>
+          <div>
+            <p class="text-sm font-bold text-gray-900">Location</p>
+            <p class="text-sm text-gray-500">Dhayari, Pune, Maharashtra 411041</p>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="rounded-2xl overflow-hidden flex-1 min-h-[260px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.9544658524!2d73.80899!3d18.45611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2954f2d2a4bcf%3A0x8c12e5e8b3b3c1a0!2sDhayari%20Village%2C%20Dhayari%2C%20Pune%2C%20Maharashtra%20411041!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin"
+            class="w-full h-full min-h-[260px] border-0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+      </div>
+
+      <!-- RIGHT — Form Card -->
+      <div class="bg-white rounded-2xl p-8 sm:p-10 flex flex-col gap-5">
+
+        <h3 class="font-primary text-2xl font-medium text-gray-900 text-center">Book Your Shoot</h3>
+
+        <input type="text" placeholder="Your Name"
+          class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2]" />
+
+        <div class="grid grid-cols-2 gap-4">
+          <input type="email" placeholder="Email Address"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2]" />
+          <input type="tel" placeholder="Phone Number"
+            class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2]" />
+        </div>
+
+        <select class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-600 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2] appearance-none">
+          <option value="" disabled selected>Select Service</option>
+          <option>Wedding Photography</option>
+          <option>Pre-Wedding Shoot</option>
+          <option>Cinematic Wedding Film</option>
+          <option>Maternity Photography</option>
+          <option>Baby & Kids Photography</option>
+          <option>Event Photography</option>
+        </select>
+
+        <input type="date"
+          class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-600 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2]" />
+
+        <textarea rows="4" placeholder="Tell us about your event or requirements..."
+          class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2] resize-none"></textarea>
+
+        <button type="submit"
+          class="group relative overflow-hidden bg-black text-white text-sm font-semibold px-8 py-4 rounded-full w-full flex items-center justify-center gap-2 transition-all duration-300">
+          <span class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+          <span class="relative z-10 transition-colors duration-300">Send Inquiry</span>
+          <i class="ri-arrow-right-line relative z-10"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+         <!-- CTA SECTION -->
+<section class="relative py-20 sm:py-28 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://cdn.prod.website-files.com/69dcca29a71a4cd598efb43c/69dcca29a71a4cd598efb48b_Tropical%20Greenery%201-about%20background%20image.webp"
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Label -->
+      <span class="text-sm font-medium text-[#d6bfa7]">Your Story Awaits</span>
+      
+      <!-- Heading -->
+      <h2 class="font-primary text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-tight mt-4 mb-6">
+        Let's Create <br />Timeless Memories
+      </h2>
+      
+      <!-- Description -->
+      <p class="text-white/70 text-base sm:text-lg leading-relaxed mx-auto mb-10">
+        Book your photography session today and let us capture the moments that matter most. From weddings to maternity shoots, we're here to preserve your beautiful stories.
+      </p>
+      
+      <!-- CTA Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+  <a href="gallery.html"
+    class="group relative overflow-hidden transition-all duration-300 bg-black text-white flex items-center text-sm font-medium px-6 py-4 rounded-full"
+  >
+    <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">Book A Session</span>
+    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
+      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
+      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
+    </span>
+  </a>
+
+  <a href="gallery.html"
+    class="group relative overflow-hidden transition-all duration-300 bg-white text-black flex items-center text-sm font-medium px-6 py-4 rounded-full"
+  >
+    <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-white">View Full Gallery</span>
+    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
+      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
+      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
+    </span>
+  </a>
+</div>
+    </div>
+  </div>
+
+  
+</section>
+
+      <footer class="">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <!-- Main footer grid -->
+          <div
+            class="py-16 md:py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12"
+          >
+            <!-- Col 1: Brand -->
+            <div class="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
+              <div class="flex items-center gap-3">
+                <img
+                  class="w-12 h-12 rounded-[8px] object-cover border border-[#a88b6a]/40"
+                  src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
+                  alt="SR Film Photography Logo"
+                />
+                <div class="flex flex-col">
+                  <span
+                    class="font-serif text-base font-semibold text-gray-900 leading-tight"
+                    >SR Films</span
+                  >
+                  <span
+                    class="font-serif text-base font-semibold text-gray-900 leading-tight"
+                    >Photography</span
+                  >
+                </div>
+              </div>
+              <p class="text-[15px] text-gray-500 leading-[1.7] max-w-xs">
+                Capturing life's most precious moments — from weddings and
+                pre-wedding shoots to maternity, baby, and event photography.
+              </p>
+              <div class="flex items-center gap-3 mt-1">
+                <a
+                  href="#"
+                  class="size-9 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a] hover:bg-[#a88b6a] hover:text-white transition-colors duration-300"
+                >
+                  <i class="ri-instagram-line text-base"></i>
+                </a>
+                <a
+                  href="#"
+                  class="size-9 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a] hover:bg-[#a88b6a] hover:text-white transition-colors duration-300"
+                >
+                  <i class="ri-facebook-circle-line text-base"></i>
+                </a>
+                <a
+                  href="#"
+                  class="size-9 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a] hover:bg-[#a88b6a] hover:text-white transition-colors duration-300"
+                >
+                  <i class="ri-youtube-line text-base"></i>
+                </a>
+                <a
+                  href="#"
+                  class="size-9 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a] hover:bg-[#a88b6a] hover:text-white transition-colors duration-300"
+                >
+                  <i class="ri-whatsapp-line text-base"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div class="flex flex-col gap-5">
+              <h3
+                class="text-[13px] font-semibold text-gray-400 tracking-widest uppercase"
+              >
+                Quick Links
+              </h3>
+              <ul class="flex flex-col gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Our Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Gallery</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Testimonials</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Col 3: Services -->
+            <div class="flex flex-col gap-5">
+              <h3
+                class="text-[13px] font-semibold text-gray-400 tracking-widest uppercase"
+              >
+                Services
+              </h3>
+              <ul class="flex flex-col gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Wedding Photography</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Pre-Wedding Shoots</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Cinematic Wedding Films</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Maternity Photography</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Baby & Kids Photography</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >Event Photography</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div class="flex flex-col gap-5">
+              <h3
+                class="text-[13px] font-semibold text-gray-400 tracking-widest uppercase"
+              >
+                Contact
+              </h3>
+              <ul class="flex flex-col gap-4">
+                <li class="flex items-start gap-3">
+                  <span
+                    class="size-8 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a] mt-0.5"
+                  >
+                    <i class="ri-map-pin-line text-sm"></i>
+                  </span>
+                  <span class="text-[15px] text-gray-600 leading-[1.6]"
+                    >Mumbai, Maharashtra, India</span
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <span
+                    class="size-8 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]"
+                  >
+                    <i class="ri-phone-line text-sm"></i>
+                  </span>
+                  <a
+                    href="tel:+919999999999"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >+91 99999 99999</a
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <span
+                    class="size-8 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]"
+                  >
+                    <i class="ri-mail-line text-sm"></i>
+                  </span>
+                  <a
+                    href="mailto:hello@srfilmphotography.com"
+                    class="text-[15px] text-gray-600 hover:text-[#a88b6a] transition-colors duration-200"
+                    >hello@srfilmphotography.com</a
+                  >
+                </li>
+                <li class="flex items-center gap-3">
+                  <span
+                    class="size-8 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]"
+                  >
+                    <i class="ri-time-line text-sm"></i>
+                  </span>
+                  <span class="text-[15px] text-gray-600"
+                    >Mon – Sun: 9 AM – 8 PM</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          
+          <!-- Bottom bar -->
+          <div
+            class="py-5 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-3"
+          >
+            <p class="text-[13px] text-gray-400">
+              © 2025 SR Film Photography. All rights reserved.
+            </p>
+            <p class="text-[13px] text-gray-400">
+              Designed &amp; Developed by
+              <a
+                href="#"
+                class="text-[#a88b6a] font-semibold hover:underline transition-all"
+                >Raino Studios</a
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="./assets/js/swipers.js"></script>
+      <script src="./assets/js/mobile-menu.js"></script>
+      <script src="./assets/js/faq.js"></script>
+      <script src="./assets/js/contact-combo.js"></script>
+
+      <script src="./assets/js/loader.js"></script>
+
+      <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+
+      <script src="./assets/js/init.js"></script>
+      <script src="./assets/js/text-mask.js"></script>
+
+    
+    
+
+      <script>
+        /* ── Navbar hide/show on scroll ── */
+        let lastScroll = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            const current = window.scrollY;
+            if (current <= 60) {
+              navbar.classList.remove("hidden-nav");
+            } else if (current > lastScroll) {
+              navbar.classList.add("hidden-nav");
+            } else {
+              navbar.classList.remove("hidden-nav");
+            }
+            lastScroll = current;
+          },
+          { passive: true },
+        );
+
+        /* ── Mobile sidebar ── */
+        function openSidebar() {
+          document.getElementById("mobile-sidebar").classList.add("open");
+          document.getElementById("sidebar-overlay").classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+        function closeSidebar() {
+          document.getElementById("mobile-sidebar").classList.remove("open");
+          document.getElementById("sidebar-overlay").classList.add("hidden");
+          document.body.style.overflow = "";
+        }
+      </script>
+
+      <script>
+        var testimonialSwiper = new Swiper(".testimonial-swiper", {
+          freeMode: true,
+          autoHeight: false,
+          navigation: {
+            nextEl: ".carousel-right",
+            prevEl: ".carousel-left",
+          },
+          breakpoints: {
+            0: { slidesPerView: 1, spaceBetween: 15 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 2, spaceBetween: 30 },
+          },
+        });
+      </script>
+
+      <script>
+        const heroSwiper = new Swiper(".heroSwiper", {
+          effect: "fade",
+          fadeEffect: {
+            crossFade: true,
+          },
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          loop: true,
+          speed: 1000,
+        });
+      </script>
+    </div>
+  </body>
+</html>
