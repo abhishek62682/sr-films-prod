@@ -28,8 +28,8 @@
   </head>
   <body>
 
-    <!-- LOADER -->
-<div id="loader" style="position:fixed;inset:0;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;overflow:hidden;">
+  <!-- LOADER -->
+<div id="loader" style="position:fixed;inset:0;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999999999;overflow:hidden;">
 
   <!-- Scanlines only (removed heavy grain animation) -->
   <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px);"></div>
@@ -73,32 +73,117 @@
 
   </div>
 </div>
+   <!-- Floating QR + WhatsApp + Call Buttons -->
+<div
+  class="fixed bottom-0 left-0 right-0 z-[9999] h-[8svh] md:h-auto flex md:bottom-6 md:right-6 md:left-auto md:flex-col-reverse gap-0 sm:gap-2 p-0 bg-transparent backdrop-blur-sm md:backdrop-blur-none"
+>
+  <!-- Call -->
+  <a
+    href="tel:+918767591139"
+    class="flex-1 md:flex-none inline-flex items-center justify-center bg-black text-white md:w-12 md:h-12 md:rounded-full hover:bg-neutral-800 active:scale-[0.97] transition-all duration-200 shadow-lg"
+    aria-label="Call us now"
+  >
+    <i class="ri-phone-line text-xl"></i>
+    <span class="ml-2 text-sm font-semibold md:hidden">Call Now</span>
+  </a>
 
-     <!-- Floating WhatsApp + Call Buttons -->
-      <div
-        class="fixed bottom-0 left-0 right-0 z-50 h-[8svh] md:h-auto flex md:bottom-6 md:right-6 md:left-auto md:flex-col gap-0 sm:gap-2 p-0 bg-transparent backdrop-blur-sm md:backdrop-blur-none"
-      >
-        <!-- WhatsApp -->
-        <a href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex-1 md:flex-none inline-flex items-center justify-center bg-[#25D366] text-white md:w-12 md:h-12 md:rounded-full hover:bg-[#1ebe5d] active:scale-[0.97] transition-all duration-200 shadow-lg"
-          aria-label="Chat on WhatsApp"
-        >
-          <i class="ri-whatsapp-line text-xl"></i>
-          <span class="ml-2 text-sm font-semibold md:hidden">WhatsApp</span>
-        </a>
+  <!-- WhatsApp -->
+  <a
+    href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="flex-1 md:flex-none inline-flex items-center justify-center bg-[#25D366] text-white md:w-12 md:h-12 md:rounded-full hover:bg-[#1ebe5d] active:scale-[0.97] transition-all duration-200 shadow-lg"
+    aria-label="Chat on WhatsApp"
+  >
+    <i class="ri-whatsapp-line text-xl"></i>
+    <span class="ml-2 text-sm font-semibold md:hidden">WhatsApp</span>
+  </a>
 
-        <!-- Call -->
-        <a
-          href="tel:+918767591139"
-          class="flex-1 md:flex-none inline-flex items-center justify-center bg-black text-white md:w-12 md:h-12 md:rounded-full hover:bg-neutral-800 active:scale-[0.97] transition-all duration-200 shadow-lg"
-          aria-label="Call us now"
-        >
-          <i class="ri-phone-line text-xl"></i>
-          <span class="ml-2 text-sm font-semibold md:hidden">Call Now</span>
-        </a>
-      </div>
+  <!-- QR Code -->
+  <div class="qr-wrap flex-1 md:flex-none relative" id="qrWrapper">
+
+    <!-- Popup -->
+    <div class="qr-popup absolute bottom-full right-0 mb-3 bg-white rounded-2xl shadow-xl p-4 text-center w-44 border  border-neutral-100">
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://sr-films-prod.vercel.app/gallery.html"
+        width="140"
+        height="140"
+        alt="QR code to gallery"
+        class="rounded-lg mx-auto"
+      />
+      <p class="text-xs text-neutral-500 mt-2">Scan to view gallery</p>
+    </div>
+
+    <!-- Button -->
+    <button
+      class="qr-btn w-full h-full md:w-12 md:h-12 md:rounded-full inline-flex items-center justify-center bg-white text-black border border-neutral-200 active:scale-[0.97] transition-all duration-200 shadow-lg"
+      aria-label="Show QR Code"
+    >
+      <i class="ri-qr-code-line text-xl"></i>
+      <span class="ml-2 text-sm font-semibold md:hidden">QR Code</span>
+    </button>
+  </div>
+</div>
+
+<style>
+  /* Popup hidden by default */
+  .qr-popup {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 99999; /* Ensure it's above everything */
+}
+
+  /* Desktop: hover on the whole wrap keeps popup open */
+  @media (min-width: 768px) {
+    .qr-wrap:hover .qr-popup {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      z-index: 9999999999999;
+    }
+  }
+
+  /* Mobile: toggle via JS class */
+  .qr-popup.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const btn = document.querySelector('.qr-btn');
+  const popup = document.querySelector('.qr-popup');
+  const wrapper = document.getElementById('qrWrapper');
+
+  // Mobile tap toggle
+  btn.addEventListener('click', function (e) {
+    if (window.innerWidth < 768) {
+      e.stopPropagation();
+      popup.classList.toggle('open');
+    }
+  });
+
+  // Close on outside click (mobile)
+  document.addEventListener('click', function (e) {
+    if (!wrapper.contains(e.target)) {
+      popup.classList.remove('open');
+    }
+  });
+</script>
+
+<!-- Close QR popup when clicking outside -->
+<script>
+  document.addEventListener('click', function (e) {
+    const wrapper = document.getElementById('qrWrapper');
+    const popup = document.getElementById('qrPopup');
+    if (wrapper && !wrapper.contains(e.target)) {
+      popup.classList.add('hidden');
+    }
+  });
+</script>
 
     <!-- NAVBAR -->
 <nav id="navbar" class="px-4 sm:px-6 pt-6 md:px-12 lg:px-16 md:pt-8">
