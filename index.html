@@ -6,7 +6,7 @@
 
     <link
       rel="shortcut icon"
-      href="./assets/img/logo/favicon.png"
+      href="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
       type="image/x-icon"
     />
 
@@ -23,6 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
 
     <link
       rel="stylesheet"
@@ -42,90 +43,56 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <style>
-      /* Navbar hide/show on scroll */
-      #navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        transform: translateY(0);
-        transition:
-          transform 0.35s ease,
-          background 0.3s ease;
-      }
-
-      #navbar.hidden-nav {
-        transform: translateY(-110%);
-      }
-      /* Mobile sidebar */
-      #mobile-sidebar {
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-      }
-
-      #mobile-sidebar.open {
-        transform: translateX(0);
-      }
-      /* ── TESTIMONIALS MARQUEE ── */
-      .testi-track {
-        display: flex;
-        gap: 20px;
-        width: max-content;
-        animation: scroll-left 38s linear infinite;
-      }
-      .testi-track:hover {
-        animation-play-state: paused;
-      }
-      .testi-card {
-        width: 300px;
-        flex-shrink: 0;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 24px;
-      }
-
-      .carousel-simple {
-        display: flex;
-        width: max-content;
-      }
-      @keyframes scroll-left {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-      .carousel-simple {
-        animation: scroll-left 22s linear infinite;
-      }
-      .carousel-simple:hover {
-        animation-play-state: paused;
-      }
-      .group-simple {
-        display: flex;
-        align-items: center;
-        gap: 56px;
-        padding: 0 28px;
-      }
-      .card-simple {
-        display: flex;
-        align-items: center;
-        height: 36px;
-        opacity: 0.45;
-        filter: brightness(1.2);
-        transition: opacity 0.3s;
-      }
-      .card-simple:hover {
-        opacity: 0.85;
-      }
-    </style>
+   
   </head>
 
   <body class="antialiased">
+
+<!-- LOADER -->
+<div id="loader" style="position:fixed;inset:0;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;overflow:hidden;">
+  
+  <!-- Grain -->
+  <div style="position:absolute;inset:-50%;width:200%;height:200%;background-image:url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.08%22/%3E%3C/svg%3E');opacity:0.4;pointer-events:none;animation:grain-move 0.8s steps(2) infinite;"></div>
+  
+  <!-- Scanlines -->
+  <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px);"></div>
+
+  <!-- Corner brackets -->
+  <div style="position:absolute;top:20px;left:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
+  <div style="position:absolute;top:20px;right:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
+  <div style="position:absolute;bottom:20px;left:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
+  <div style="position:absolute;bottom:20px;right:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
+
+  <!-- Center content -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:28px;position:relative;z-index:5;">
+    
+    <!-- Ring + GIF -->
+    <div style="position:relative;width:110px;height:110px;">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;animation:ring-spin 2.4s linear infinite;" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="55" cy="55" r="50" stroke="rgba(168,139,106,0.15)" stroke-width="1"/>
+        <circle cx="55" cy="55" r="50" stroke="url(#ag)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="180 135"/>
+        <defs>
+          <linearGradient id="ag" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#a88b6a"/>
+            <stop offset="100%" stop-color="rgba(168,139,106,0)"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div style="position:absolute;inset:10px;border-radius:50%;overflow:hidden;background:#1a1a1a;">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybGE2OG1vNnVpcW15Z2I4cjR2Z2JlYmZxNmdvcHRwaHE0N2RkYWU5ZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/YjQk70gmQLDmJTawn0/source.gif" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div style="width:160px;height:1px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden;animation:fade-up 0.8s ease 0.6s both;">
+      <div id="loader-fill" style="height:100%;width:0%;background:linear-gradient(90deg,#a88b6a,#d4a96a);transition:width 0.1s linear;box-shadow:0 0 6px rgba(168,139,106,0.6);"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
 
     
     <div class="root w-full">
@@ -332,14 +299,14 @@
         class="fixed inset-0 bg-black/40 z-[150] hidden"
       ></div>
 
-      <header class="w-full h-screen relative">
+      <header class="w-full h-[92svh] md:h-screen relative">
         <!-- Nav + content -->
         <div
           class="hero__frame-group space-y-[14px] max-w-[1340px] h-full mx-auto relative z-[99] px-4 xl:px-0"
         >
           <!-- Hero content -->
           <div
-            class="hero__frame-content w-full absolute bottom-[100px] left-0 space-y-[14px] px-16 xl:px-0"
+            class="hero__frame-content w-full absolute bottom-[60px] md:bottom-[100px] left-0 space-y-[14px] px-12 xl:px-0"
           >
             <div class="space-y-2">
               <div
@@ -2347,6 +2314,8 @@
           speed: 1000,
         });
       </script>
+
+      <script src="./assets/js/loader.js"></script>
     </div>
   </body>
 </html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #faf7f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #faf7f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .shutter { position: relative; width: 140px; height: 140px; }
+    .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 2px solid rgba(168,139,106,0.3);
+    }
+    .ring-inner {
+      position: absolute; inset: 20px; border-radius: 50%;
+      border: 1px solid rgba(168,139,106,0.15);
+    }
+    .center-dot {
+      position: absolute; top: 50%; left: 50%;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #a88b6a; transform: translate(-50%, -50%);
+    }
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: #a88b6a;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+    .progress-line {
+      width: 100px; height: 1px;
+      background: rgba(168,139,106,0.2);
+      border-radius: 1px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: #a88b6a;
+      border-radius: 1px; width: 0%;
+      transition: width 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div class="shutter">
+      <div class="ring"></div>
+      <div class="ring-inner"></div>
+      <canvas id="shutterCanvas" width="140" height="140" style="position:absolute;inset:0;"></canvas>
+      <div class="center-dot"></div>
+    </div>
+    <div class="brand">SR Film Photography</div>
+    <div class="progress-line">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('shutterCanvas');
+    const ctx = canvas.getContext('2d');
+    const cx = 70, cy = 70, r = 52;
+    const NUM_BLADES = 6;
+    let phase = 0;
+    let progress = 0;
+    const pFill = document.getElementById('progressFill');
+
+    function drawShutter(openAmount) {
+      ctx.clearRect(0, 0, 140, 140);
+      const angleStep = (Math.PI * 2) / NUM_BLADES;
+      const maxClose = 0.82;
+      const t = 1 - openAmount;
+      const bladeReach = r * (0.35 + t * maxClose);
+      const bladeWidth = (Math.PI * 2 / NUM_BLADES) * (0.7 - t * 0.35);
+
+      for (let i = 0; i < NUM_BLADES; i++) {
+        const baseAngle = angleStep * i + phase;
+        const arcStart = baseAngle - bladeWidth * 0.5;
+        const arcEnd = baseAngle + bladeWidth * 1.5;
+
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, bladeReach, arcStart, arcEnd);
+        ctx.closePath();
+
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, bladeReach);
+        grad.addColorStop(0, `rgba(40,32,24,${0.1 + t * 0.75})`);
+        grad.addColorStop(1, `rgba(168,139,106,${0.15 + t * 0.6})`);
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        ctx.strokeStyle = `rgba(168,139,106,${0.3 + t * 0.4})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+
+      if (openAmount > 0.05) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, r * openAmount * 0.55, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(250,247,242,${openAmount * 0.9})`;
+        ctx.fill();
+      }
+    }
+
+    let startTime = null;
+    const cycleDuration = 2200;
+
+    function animate(ts) {
+      if (!startTime) startTime = ts;
+      const elapsed = (ts - startTime) % (cycleDuration * 2);
+      const half = cycleDuration;
+
+      let open = elapsed < half
+        ? 1 - (elapsed / half)
+        : (elapsed - half) / half;
+
+      const eased = open < 0.5
+        ? 2 * open * open
+        : 1 - Math.pow(-2 * open + 2, 2) / 2;
+
+      phase += 0.008;
+      drawShutter(eased);
+
+      progress = Math.min(progress + 0.4, 100);
+      pFill.style.width = progress + '%';
+
+      requestAnimationFrame(animate);
+    }
+
+    drawShutter(1);
+    requestAnimationFrame(animate);
+
+    // Hide loader when page is ready
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1800);
+    });
+  </script>
+
+</body>
+</html>
