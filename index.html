@@ -243,166 +243,73 @@
   onclick="closeSidebar()"
   class="fixed inset-0 bg-black/40 z-[150] hidden"
 ></div>
+<header class="w-full h-[92svh] md:h-screen relative">
 
-      <header class="w-full h-[92svh] md:h-screen relative">
-        <!-- Nav + content -->
+  <div class="hero__frame-group space-y-[14px] max-w-[1340px] h-full mx-auto relative z-[99] px-4 xl:px-0">
+    <!-- Hero content -->
+    <div
+      class="hero__frame-content w-full absolute top-[60%] -translate-y-1/2 md:top-auto md:translate-y-0 md:bottom-[100px] left-0 right-0 space-y-[14px] px-8 md:px-12 xl:px-0 flex flex-col items-center md:items-start"
+    >
+      <div class="space-y-2 w-full">
+        <div class="w-fit mx-auto md:mx-0 flex gap-[7px] items-center font-secondary bg-[#0003] rounded-[20px] py-[5px] px-[12px] backdrop-blur-lg text-white">
+          <i class="ri-map-pin-2-fill text-[13px]"></i>
+          <span class="text-[13px] leading-[20px]">Based in Pune, Maharashtra</span>
+        </div>
         <div
-          class="hero__frame-group space-y-[14px] max-w-[1340px] h-full mx-auto relative z-[99] px-4 xl:px-0"
+          id="hero-heading"
+          class="font-primary font-medium text-white text-[32px] sm:text-[44px] md:text-[64px] leading-[1.1] text-center md:text-left"
         >
-          <!-- Hero content -->
-          <div
-            class="hero__frame-content w-full absolute bottom-[60px] md:bottom-[100px] left-0 space-y-[14px] px-12 xl:px-0"
-          >
-            <div class="space-y-2">
-              <div
-                class="w-fit flex gap-[7px] items-center font-secondary bg-[#0003] rounded-[20px] py-[5px] px-[12px] backdrop-blur-lg text-white"
-              >
-                <i class="ri-map-pin-2-fill text-[13px]"></i>
-                <span class="text-[13px] leading-[20px]"
-                  >Based in Pune, Maharashtra</span
-                >
-              </div>
-              <div
-                id="hero-heading"
-                class="font-primary font-medium text-white text-[32px] sm:text-[44px] md:text-[64px] leading-[1.1]"
-              >
-                <h2>Capturing love stories</h2>
-                <h2>that last forever</h2>
-              </div>
-            </div>
-
-            <div
-              class="hero-middle-content flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
-            >
-              <p
-                id="hero-sub"
-                class="text-[#e7e7e7] max-w-md text-[15px] md:text-[16px] leading-[24px]"
-              >
-                Authentic wedding films and timeless photographs that preserve
-                every emotion, detail, and unforgettable moment of your special
-                day.
-              </p>
-            </div>
-          </div>
+          <h2>Capturing love stories</h2>
+          <h2>that last forever</h2>
         </div>
+      </div>
 
-        <div class="hero__frame-overlay absolute top-0 left-0 w-full h-full">
-          <div
-            class="hero__frame-img rounded-[10px] overflow-hidden inset-2 md:inset-[15px] absolute"
-          >
-            <!-- Swiper -->
-            <div class="swiper heroSwiper w-full h-full">
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide !w-full !h-full">
-                  <img
-                    class="w-full h-full object-cover"
-                    src="https://marshmallowstudios.in/wp-content/uploads/2023/12/PurvaRohanWedding-889-1-scaled.jpg"
-                    alt=""
-                  />
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide !w-full !h-full relative">
-                  <img
-                    class="w-full h-full object-cover"
-                    src="https://marshmallowstudios.in/wp-content/uploads/2023/09/Bharti-Ajay-101-1-scaled.jpg"
-                    alt=""
-                  />
-                  <div
-                    class="overlay bg-[#09090973] absolute inset-0 w-full h-full z-10"
-                  ></div>
-                </div>
-
-                <!-- Pagination -->
-                <div class="swiper-pagination !bottom-4 !z-[9990]"></div>
-              </div>
-
-              <!-- Overlay -->
-            </div>
-
-            <style>
-              .heroSwiper {
-                width: 100%;
-                height: 100%;
-              }
-
-              .swiper-wrapper {
-                width: 100%;
-                height: 100%;
-              }
-
-              .swiper-slide {
-                width: 100%;
-                height: 100%;
-              }
-
-              .swiper-pagination-bullet {
-                background: rgba(255, 255, 255, 0.5);
-                width: 10px;
-                height: 10px;
-                transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
-                opacity: 0.8;
-              }
-
-              .swiper-pagination-bullet-active {
-                background: white;
-                width: 30px;
-                border-radius: 24px;
-                opacity: 1;
-              }
-            </style>
-          </div>
-        </div>
-
-        <!-- Mobile menu drawer -->
-        <div
-          id="mobile-menu"
-          class="mobile-menu fixed top-0 right-0 h-full w-[280px] bg-ink z-[200] flex flex-col pt-20 px-8 gap-8"
+      <div class="hero-middle-content flex flex-col md:flex-row justify-between items-center md:items-start gap-6 w-full">
+        <p
+          id="hero-sub"
+          class="text-[#e7e7e7] max-w-md text-[15px] md:text-[16px] leading-[24px] text-center md:text-left"
         >
-          <button
-            id="close-menu"
-            class="absolute top-6 right-6 text-white text-2xl"
-          >
-            <i class="ri-close-line"></i>
-          </button>
-          <a
-            href="#projects"
-            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
-            onclick="closeMobileMenu()"
-            >Projects</a
-          >
-          <a
-            href="#lookbook"
-            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
-            onclick="closeMobileMenu()"
-            >Lookbook</a
-          >
-          <a
-            href="#about"
-            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
-            onclick="closeMobileMenu()"
-            >About</a
-          >
-          <a
-            href="#services"
-            class="text-white text-[20px] font-primary font-medium border-b border-white/10 pb-4"
-            onclick="closeMobileMenu()"
-            >Services</a
-          >
-          <a
-            href="#contact"
-            class="text-white text-[20px] font-primary font-medium"
-            onclick="closeMobileMenu()"
-            >Contact</a
-          >
+          Authentic wedding films and timeless photographs that preserve
+          every emotion, detail, and unforgettable moment of your special day.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__frame-overlay absolute top-0 left-0 w-full h-full">
+    <div class="hero__frame-img rounded-[10px] overflow-hidden inset-2 md:inset-[15px] absolute">
+      <div class="swiper heroSwiper w-full h-full">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide !w-full !h-full">
+            <img class="w-full h-full object-cover" src="https://marshmallowstudios.in/wp-content/uploads/2023/12/PurvaRohanWedding-889-1-scaled.jpg" alt="" />
+          </div>
+          <div class="swiper-slide !w-full !h-full relative">
+            <img class="w-full h-full object-cover" src="https://marshmallowstudios.in/wp-content/uploads/2023/09/Bharti-Ajay-101-1-scaled.jpg" alt="" />
+            <div class="overlay bg-[#09090973] absolute inset-0 w-full h-full z-10"></div>
+          </div>
+          <div class="swiper-pagination !bottom-4 !z-[9990]"></div>
         </div>
-        <div
-          id="menu-overlay"
-          class="hidden fixed inset-0 bg-black/50 z-[150]"
-          onclick="closeMobileMenu()"
-        ></div>
-      </header>
+      </div>
+
+      <style>
+        .heroSwiper { width: 100%; height: 100%; }
+        .swiper-wrapper { width: 100%; height: 100%; }
+        .swiper-slide { width: 100%; height: 100%; }
+        .swiper-pagination-bullet {
+          background: rgba(255,255,255,0.5);
+          width: 10px; height: 10px;
+          transition: all cubic-bezier(0.19,1,0.22,1) 0.5s;
+          opacity: 0.8;
+        }
+        .swiper-pagination-bullet-active {
+          background: white; width: 30px;
+          border-radius: 24px; opacity: 1;
+        }
+      </style>
+    </div>
+  </div>
+
+</header>
 
    <!-- ABOUT SECTION -->
 <section id="about" aria-labelledby="about-heading" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
