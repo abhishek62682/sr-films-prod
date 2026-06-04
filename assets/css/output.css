@@ -3162,6 +3162,11 @@
       padding-block: 100px;
     }
   }
+  .md\:pt-8 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 8);
+    }
+  }
   .md\:text-right {
     @media (width >= 48rem) {
       text-align: right;
