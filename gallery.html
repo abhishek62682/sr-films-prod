@@ -416,6 +416,40 @@
   </div>
 
 </footer>
+   <script>
+        /* ── Navbar hide/show on scroll ── */
+        let lastScroll = 0;
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            const current = window.scrollY;
+            if (current <= 60) {
+              navbar.classList.remove("hidden-nav");
+            } else if (current > lastScroll) {
+              navbar.classList.add("hidden-nav");
+            } else {
+              navbar.classList.remove("hidden-nav");
+            }
+            lastScroll = current;
+          },
+          { passive: true },
+        );
+
+        /* ── Mobile sidebar ── */
+        function openSidebar() {
+          document.getElementById("mobile-sidebar").classList.add("open");
+          document.getElementById("sidebar-overlay").classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+        function closeSidebar() {
+          document.getElementById("mobile-sidebar").classList.remove("open");
+          document.getElementById("sidebar-overlay").classList.add("hidden");
+          document.body.style.overflow = "";
+        }
+      </script>
+
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
 
