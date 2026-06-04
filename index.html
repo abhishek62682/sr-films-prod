@@ -193,12 +193,7 @@
     }
   });
 
-  // Close on outside click (mobile)
-  document.addEventListener('click', function (e) {
-    if (!wrapper.contains(e.target)) {
-      popup.classList.remove('open');
-    }
-  });
+  
 </script>
 
      <!-- NAVBAR -->
@@ -206,7 +201,7 @@
   <div class="flex items-center justify-between bg-black/70 backdrop-blur-md border border-white/10 rounded-xl px-4 py-2.5">
     
     <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-3">
+    <a href="/" class="flex items-center gap-3">
       <img
         class="w-10 h-10 rounded-[8px] object-cover border border-yellow-700/40"
         src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
@@ -220,13 +215,13 @@
 
     <!-- Desktop Links -->
     <ul class="hidden md:flex items-center gap-6 lg:gap-8">
-      <li><a href="index.html" class="text-sm text-white/90 hover:text-white transition-colors">Home</a></li>
-      <li><a href="index.html#about" class="text-sm text-white/90 hover:text-white transition-colors">About Us</a></li>
-      <li><a href="index.html#services" class="text-sm text-white/90 hover:text-white transition-colors">Services</a></li>
-      <li><a href="index.html#why-choose-us" class="text-sm text-white/90 hover:text-white transition-colors">Why Choose Us</a></li>
-      <li><a href="index.html#gallery" class="text-sm text-white/90 hover:text-white transition-colors">Our Work</a></li>
-      <li><a href="index.html#testimonials" class="text-sm text-white/90 hover:text-white transition-colors">Testimonials</a></li>
-      <li><a href="index.html#contact" class="text-sm text-white/90 hover:text-white transition-colors">Contact Us</a></li>
+      <li><a href="/" class="text-sm text-white/90 hover:text-white transition-colors">Home</a></li>
+      <li><a href="#about" class="text-sm text-white/90 hover:text-white transition-colors">About Us</a></li>
+      <li><a href="#services" class="text-sm text-white/90 hover:text-white transition-colors">Services</a></li>
+      <li><a href="#why-choose-us" class="text-sm text-white/90 hover:text-white transition-colors">Why Choose Us</a></li>
+      <li><a href="#gallery" class="text-sm text-white/90 hover:text-white transition-colors">Our Work</a></li>
+      <li><a href="#testimonials" class="text-sm text-white/90 hover:text-white transition-colors">Testimonials</a></li>
+      <li><a href="#contact" class="text-sm text-white/90 hover:text-white transition-colors">Contact Us</a></li>
     </ul>
 
     <div class="flex items-center gap-3">
@@ -275,13 +270,13 @@
   </div>
 
   <ul class="flex flex-col gap-5 mt-4">
-    <li><a href="index.html" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Home</a></li>
-    <li><a href="index.html#about" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">About Us</a></li>
-    <li><a href="index.html#services" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Services</a></li>
-    <li><a href="index.html#why-choose-us" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Why Choose Us</a></li>
-    <li><a href="index.html#gallery" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Our Work</a></li>
-    <li><a href="index.html#testimonials" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Testimonials</a></li>
-    <li><a href="index.html#contact" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Contact Us</a></li>
+    <li><a href="/" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Home</a></li>
+    <li><a href="#about" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">About Us</a></li>
+    <li><a href="#services" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Services</a></li>
+    <li><a href="#why-choose-us" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Why Choose Us</a></li>
+    <li><a href="#gallery" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Our Work</a></li>
+    <li><a href="#testimonials" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Testimonials</a></li>
+    <li><a href="#contact" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Contact Us</a></li>
   </ul>
 
   <a href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
@@ -1209,7 +1204,7 @@
         <div class="max-w-7xl mx-auto">
           <!-- Header -->
           <div class="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
-            <span class="text-sm font-medium text-[#a88b6a]">(Our Work)</span>
+            <span class="text-sm font-medium text-[#a88b6a]">Our Work</span>
             <h2
               id="gallery-heading"
               class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
@@ -1517,7 +1512,7 @@
         data-scroll-section
       >
         <div
-          class="bg-[#f6f3ec] w-full px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-24 lg:py-40 flex flex-col lg:flex-row gap-8 lg:gap-16"
+          class="bg-[#faf7f2] w-full px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-24 lg:py-40 flex flex-col lg:flex-row gap-8 lg:gap-16"
         >
           <!-- LEFT -->
           <div
@@ -1528,7 +1523,7 @@
             >
               <div>
                 <span class="text-sm font-medium text-[#a88b6a]"
-              >(Testimonials)</span
+              >Testimonials</span
             >
                
                 <h2
@@ -1768,15 +1763,7 @@
           </a>
         </div>
 
-        <div class="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 w-full md:w-fit">
-          <span class="size-10 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]">
-            <i class="ri-map-pin-line"></i>
-          </span>
-          <div>
-            <p class="text-sm font-bold text-gray-900">Location</p>
-            <p class="text-sm text-gray-500">Dhayari, Pune, Maharashtra 411041</p>
-          </div>
-        </div>
+      
 
         <!-- Map -->
         <div class="rounded-2xl overflow-hidden flex-1 min-h-[260px]">
@@ -2022,39 +2009,53 @@
     
     
 
-      <script>
-        /* ── Navbar hide/show on scroll ── */
-        let lastScroll = 0;
-        const navbar = document.getElementById("navbar");
+    <script>
+  /* ── Close QR popup when clicking outside ── */
+ document.addEventListener('click', function (e) {
+  const wrapper = document.getElementById('qrWrapper');
+  const popup = document.querySelector('.qr-popup');
+  if (wrapper && popup && !wrapper.contains(e.target)) {
+    popup.classList.remove('open'); // ✅ 'hidden' nahi, 'open' remove karo
+  }
+});
 
-        window.addEventListener(
-          "scroll",
-          () => {
-            const current = window.scrollY;
-            if (current <= 60) {
-              navbar.classList.remove("hidden-nav");
-            } else if (current > lastScroll) {
-              navbar.classList.add("hidden-nav");
-            } else {
-              navbar.classList.remove("hidden-nav");
-            }
-            lastScroll = current;
-          },
-          { passive: true },
-        );
+  /* ── Navbar hide/show on scroll ── */
+  let lastScroll = 0;
+  const navbar = document.getElementById("navbar");
 
-        /* ── Mobile sidebar ── */
-        function openSidebar() {
-          document.getElementById("mobile-sidebar").classList.add("open");
-          document.getElementById("sidebar-overlay").classList.remove("hidden");
-          document.body.style.overflow = "hidden";
-        }
-        function closeSidebar() {
-          document.getElementById("mobile-sidebar").classList.remove("open");
-          document.getElementById("sidebar-overlay").classList.add("hidden");
-          document.body.style.overflow = "";
-        }
-      </script>
+ window.addEventListener(
+  "scroll",
+  () => {
+    const current = window.scrollY;
+
+    /* Hide QR popup on scroll — remove 'open' class */
+    const popup = document.querySelector('.qr-popup');
+    if (popup) popup.classList.remove('open'); // ✅ 'hidden' nahi, 'open' remove karo
+
+    if (current <= 60) {
+      navbar.classList.remove("hidden-nav");
+    } else if (current > lastScroll) {
+      navbar.classList.add("hidden-nav");
+    } else {
+      navbar.classList.remove("hidden-nav");
+    }
+    lastScroll = current;
+  },
+  { passive: true },
+);
+
+  /* ── Mobile sidebar ── */
+  function openSidebar() {
+    document.getElementById("mobile-sidebar").classList.add("open");
+    document.getElementById("sidebar-overlay").classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+  }
+  function closeSidebar() {
+    document.getElementById("mobile-sidebar").classList.remove("open");
+    document.getElementById("sidebar-overlay").classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+</script>
 
       <script>
         var testimonialSwiper = new Swiper(".testimonial-swiper", {
