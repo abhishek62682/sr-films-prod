@@ -381,7 +381,19 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-
+ @keyframes dropFall {
+    0%   { top: -15%; opacity: 0; }
+    10%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { top: 110%; opacity: 0; }
+  }
+  .golden-line-wrap { position: absolute; top: 0; bottom: 0; width: 1px; overflow: hidden; pointer-events: none; }
+  .golden-line-bg   { position: absolute; inset: 0; background: rgba(255,255,255,0.04); }
+  .golden-drop {
+    position: absolute; left: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent 0%, #c9a84c 30%, #f5d98b 60%, #c9a84c 80%, transparent 100%);
+    animation: dropFall linear infinite;
+  }
  
       /* Navbar hide/show on scroll */
       #navbar {
