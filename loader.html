@@ -1,168 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loading</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- ABOUT US SECTION -->
+<section id="about" class="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 ">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- TOP CONTENT -->
+    <div class="">
+      <!-- About Tab -->
+      <div class="mb-12 flex justify-between">
 
-    body {
-      background: #faf7f2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
+         <span class="text-sm font-medium text-[#a88b6a]"
+              >About</span
+            >
 
-    #loader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #faf7f2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
 
-    #loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
+             <div class="max-w-[920px]">
+              <h2
+                
+                class="font-primary w-full w-full reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight tracking-normal mt-3"
+              >
+We capture authentic moments and timeless emotions.
+The result? Photographs that tell your story for a lifetime.
 
-    .shutter { position: relative; width: 140px; height: 140px; }
-    .ring {
-      position: absolute; inset: 0; border-radius: 50%;
-      border: 2px solid rgba(168,139,106,0.3);
-    }
-    .ring-inner {
-      position: absolute; inset: 20px; border-radius: 50%;
-      border: 1px solid rgba(168,139,106,0.15);
-    }
-    .center-dot {
-      position: absolute; top: 50%; left: 50%;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: #a88b6a; transform: translate(-50%, -50%);
-    }
-    .brand {
-      font-family: Georgia, serif;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      color: #a88b6a;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-    .progress-line {
-      width: 100px; height: 1px;
-      background: rgba(168,139,106,0.2);
-      border-radius: 1px; overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%; background: #a88b6a;
-      border-radius: 1px; width: 0%;
-      transition: width 0.1s linear;
-    }
-  </style>
-</head>
-<body>
+              </h2>
 
-  <div id="loader">
-    <div class="shutter">
-      <div class="ring"></div>
-      <div class="ring-inner"></div>
-      <canvas id="shutterCanvas" width="140" height="140" style="position:absolute;inset:0;"></canvas>
-      <div class="center-dot"></div>
+
+
+              <div class="w-full flex gap-4 py-10">
+
+                <div class="w-2/3">
+                  <img class="w-full h-full rounded-2xl" src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/075632dc-b9d5-4b90-a699-c8997ba16387/DSC05949-Edit.JPG?format=750w" alt="">
+
+
+                </div>
+                <div class="w-1/3">
+                  <img class="w-full h-full rounded-2xl" src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/aa7f8e49-eb0b-47ed-8642-7746b6d8c5f4/276A4545-Edit.jpg?format=750w" alt="">
+                </div>
+              </div>
+
+
+             
+             </div>
+       
+
+        
+     
     </div>
-    <div class="brand">SR Film Photography</div>
-    <div class="progress-line">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
+
+
+
+     <!-- About STATS -->
+
+     <div class="flex justify-between">
+
+    <div>
+  <h4
+    class="purecounter text-[60px] leading-none font-semibold text-[#a88b6a]"
+    data-purecounter-start="0"
+    data-purecounter-end="500"
+    data-purecounter-duration="2"
+  >
+    0
+  </h4>
+  <p class="mt-2 text-sm uppercase tracking-wider">Shoots Completed</p>
+</div>
+
+<div>
+  <h4
+    class="purecounter text-[60px] leading-none font-semibold text-[#a88b6a]"
+    data-purecounter-start="0"
+    data-purecounter-end="200"
+    data-purecounter-duration="2"
+  >
+    0
+  </h4>
+  <p class="mt-2 text-sm uppercase tracking-wider">Weddings Covered</p>
+</div>
+
+<div>
+  <h4
+    class="purecounter text-[60px] leading-none font-semibold text-[#a88b6a]"
+    data-purecounter-start="0"
+    data-purecounter-end="5"
+    data-purecounter-duration="2"
+  >
+    0
+  </h4>
+  <p class="mt-2 text-sm uppercase tracking-wider">Years Experience</p>
+</div>
+
+<div>
+  <h4
+    class="purecounter text-[60px] leading-none font-semibold text-[#a88b6a]"
+    data-purecounter-start="0"
+    data-purecounter-end="100"
+    data-purecounter-duration="2"
+  >
+    0
+  </h4>
+  <p class="mt-2 text-sm uppercase tracking-wider">Happy Clients</p>
+</div>
+
+
+
+
+
+     </div>
+
+
+    
+
+
   </div>
+</section>
 
-  <script>
-    const canvas = document.getElementById('shutterCanvas');
-    const ctx = canvas.getContext('2d');
-    const cx = 70, cy = 70, r = 52;
-    const NUM_BLADES = 6;
-    let phase = 0;
-    let progress = 0;
-    const pFill = document.getElementById('progressFill');
 
-    function drawShutter(openAmount) {
-      ctx.clearRect(0, 0, 140, 140);
-      const angleStep = (Math.PI * 2) / NUM_BLADES;
-      const maxClose = 0.82;
-      const t = 1 - openAmount;
-      const bladeReach = r * (0.35 + t * maxClose);
-      const bladeWidth = (Math.PI * 2 / NUM_BLADES) * (0.7 - t * 0.35);
 
-      for (let i = 0; i < NUM_BLADES; i++) {
-        const baseAngle = angleStep * i + phase;
-        const arcStart = baseAngle - bladeWidth * 0.5;
-        const arcEnd = baseAngle + bladeWidth * 1.5;
+  <section id="gallery" aria-labelledby="gallery-heading" class="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
 
-        ctx.beginPath();
-        ctx.moveTo(cx, cy);
-        ctx.arc(cx, cy, bladeReach, arcStart, arcEnd);
-        ctx.closePath();
+    <!-- Asymmetric Header -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-16">
+      <div>
+        <span class="inline-block text-[11px] tracking-[0.2em] uppercase text-[#a88b6a] border border-[#a88b6a33] px-4 py-1.5 rounded-full mb-5">[ Collections ]</span>
+        <div class="w-10 h-px bg-[#a88b6a] mb-5"></div>
+        <h2 id="gallery-heading" class="font-primary text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.1] text-gray-900">
+          Visual Stories in<br><em class="italic text-[#a88b6a]">Every Frame</em>
+        </h2>
+      </div>
+      <div class="pb-2">
+        <p class="font-secondary text-sm leading-relaxed text-gray-500 max-w-sm mb-8">
+          Explore our collection of candid moments, intimate details, and breathtaking scenes that define each couple's unique love story.
+        </p>
+        <a href="gallery.html" class="group relative inline-flex items-center gap-3 overflow-hidden bg-black text-white text-sm font-medium px-6 py-3.5 rounded-full transition-all duration-300 hover:bg-[#a88b6a]">
+          <span class="font-semibold">View Full Gallery</span>
+          <span class="w-5 h-5 rounded-full border border-white/30 flex items-center justify-center text-xs overflow-hidden">
+            <i class="ri-arrow-right-line block transition-all duration-300 group-hover:translate-x-4"></i>
+            <i class="ri-arrow-right-line absolute -translate-x-4 transition-all duration-300 group-hover:translate-x-0"></i>
+          </span>
+        </a>
+      </div>
+    </div>
 
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, bladeReach);
-        grad.addColorStop(0, `rgba(40,32,24,${0.1 + t * 0.75})`);
-        grad.addColorStop(1, `rgba(168,139,106,${0.15 + t * 0.6})`);
-        ctx.fillStyle = grad;
-        ctx.fill();
+    <!-- Asymmetric Grid — top 5 -->
+    <div class="grid gap-2.5 mb-2.5" style="grid-template-columns: 1.6fr 1fr 1fr; grid-template-rows: 270px 278px;">
+      <div class="row-span-2 overflow-hidden rounded-lg group">
+        <img src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/aa7f8e49-eb0b-47ed-8642-7746b6d8c5f4/276A4545-Edit.jpg?format=750w" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/44dc6229-19fc-4483-b19e-7e3e2fa66fe6/Wedding-at-bayview-34-980x653.jpg?format=750w" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img src="https://marshmallowstudios.in/wp-content/uploads/2025/05/02-Wedding-394-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/2Engagement-197-2-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/5Wedding-232-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+      </div>
+    </div>
 
-        ctx.strokeStyle = `rgba(168,139,106,${0.3 + t * 0.4})`;
-        ctx.lineWidth = 0.8;
-        ctx.stroke();
-      }
 
-      if (openAmount > 0.05) {
-        ctx.beginPath();
-        ctx.arc(cx, cy, r * openAmount * 0.55, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(250,247,242,${openAmount * 0.9})`;
-        ctx.fill();
-      }
-    }
+  </div>
+</section>
 
-    let startTime = null;
-    const cycleDuration = 2200;
 
-    function animate(ts) {
-      if (!startTime) startTime = ts;
-      const elapsed = (ts - startTime) % (cycleDuration * 2);
-      const half = cycleDuration;
 
-      let open = elapsed < half
-        ? 1 - (elapsed / half)
-        : (elapsed - half) / half;
+   <section
+        id="gallery"
+        aria-labelledby="gallery-heading"
+        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 "
+      >
+        <div class="max-w-7xl mx-auto">
+          <!-- Header -->
+          <div class="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
+            <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase">Collections</span>
+            <h2
+              id="gallery-heading"
+              class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
+            >
+              Visual Stories in Every Frame
+            </h2>
+             <p
+              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
+            >
+              Explore our collection of candid moments, intimate details, and
+              breathtaking scenes that define each couple's unique love story.
+            </p>
+            
+          </div>
 
-      const eased = open < 0.5
-        ? 2 * open * open
-        : 1 - Math.pow(-2 * open + 2, 2) / 2;
+<div>
 
-      phase += 0.008;
-      drawShutter(eased);
+  <!-- Top grid -->
+<div class="gallery-top">
+  <div class="item-1 overflow-hidden rounded-lg group">
+    <img src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/aa7f8e49-eb0b-47ed-8642-7746b6d8c5f4/276A4545-Edit.jpg?format=750w" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+  <div class="item-2 overflow-hidden rounded-lg group">
+    <img src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/44dc6229-19fc-4483-b19e-7e3e2fa66fe6/Wedding-at-bayview-34-980x653.jpg?format=750w" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+  <div class="item-3 overflow-hidden rounded-lg group">
+    <img src="https://marshmallowstudios.in/wp-content/uploads/2025/05/02-Wedding-394-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+  <div class="item-4 overflow-hidden rounded-lg group">
+    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/2Engagement-197-2-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+  <div class="item-5 overflow-hidden rounded-lg group">
+    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/5Wedding-232-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+</div>
 
-      progress = Math.min(progress + 0.4, 100);
-      pFill.style.width = progress + '%';
+<!-- Bottom strip -->
+<div class="gallery-bottom">
+  <div class="item-b1 overflow-hidden rounded-lg group">
+    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/PurvaRohanWedding-481-1536x1024.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+  <div class="item-b2 overflow-hidden rounded-lg group">
+    <img src="https://marshmallowstudios.in/wp-content/uploads/2025/05/03-Haldi-99-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+  <div class="item-b3 overflow-hidden rounded-lg group">
+    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/PurvaRohanWedding-335-1536x1024.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  </div>
+</div>
+</div>
 
-      requestAnimationFrame(animate);
-    }
+          <!-- Button -->
+          <div class="flex justify-center">
 
-    drawShutter(1);
-    requestAnimationFrame(animate);
+            <a href="gallery.html"
+              class=" group relative overflow-hidden transition-all duration-300 md:block bg-black text-white flex items-center hover:text-black text-sm font-medium px-6 py-4  rounded-full transition-colors"
+            >
+                            <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+                            <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">View Full Gallery</span>
 
-    // Hide loader when page is ready
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.getElementById('loader').classList.add('hidden');
-      }, 1800);
-    });
-  </script>
+                           
 
-</body>
-</html>
+<span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
+  <i
+    class="ri-arrow-right-line  absolute hover:text-black inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"
+  ></i>
+
+  <i
+    class="ri-arrow-right-line absolute  inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"
+  ></i>
+</span>
+               
+          </a>
+            
+          </div>
+        </div>
+      </section>

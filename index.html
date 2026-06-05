@@ -43,56 +43,13 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+
    
   </head>
 
   <body class="antialiased">
 
-<!-- LOADER -->
-<div id="loader" style="position:fixed;inset:0;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999999999;overflow:hidden;">
 
-  <!-- Scanlines only (removed heavy grain animation) -->
-  <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px);"></div>
-
-  <!-- Corner brackets -->
-  <div style="position:absolute;top:20px;left:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
-  <div style="position:absolute;top:20px;right:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
-  <div style="position:absolute;bottom:20px;left:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
-  <div style="position:absolute;bottom:20px;right:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
-
-  <!-- Center content -->
-  <div style="display:flex;flex-direction:column;align-items:center;gap:28px;position:relative;z-index:5;">
-
-    <!-- Ring + GIF -->
-    <div style="position:relative;width:110px;height:110px;">
-      <svg style="position:absolute;inset:0;width:100%;height:100%;animation:ring-spin 2.4s linear infinite;will-change:transform;" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="55" cy="55" r="50" stroke="rgba(168,139,106,0.15)" stroke-width="1"/>
-        <circle cx="55" cy="55" r="50" stroke="url(#ag)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="180 135"/>
-        <defs>
-          <linearGradient id="ag" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#a88b6a"/>
-            <stop offset="100%" stop-color="rgba(168,139,106,0)"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div style="position:absolute;inset:10px;border-radius:50%;overflow:hidden;background:#1a1a1a;">
-        <img
-          src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybGE2OG1vNnVpcW15Z2I4cjR2Z2JlYmZxNmdvcHRwaHE0N2RkYWU5ZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/YjQk70gmQLDmJTawn0/source.gif"
-          alt=""
-          fetchpriority="high"
-          decoding="async"
-          style="width:100%;height:100%;object-fit:cover;border-radius:50%;"
-        />
-      </div>
-    </div>
-
-    <!-- Progress bar (removed box-shadow) -->
-    <div style="width:160px;height:1px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden;">
-      <div id="loader-fill" style="height:100%;width:0%;background:linear-gradient(90deg,#a88b6a,#d4a96a);transition:width 0.1s linear;will-change:width;"></div>
-    </div>
-
-  </div>
-</div>
 
 
 
@@ -360,70 +317,237 @@
 
 </header>
 
-   <!-- ABOUT SECTION -->
-<section id="about" aria-labelledby="about-heading" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="space-y-16">
-     <div class="about-top">
-       <span class="text-sm font-medium text-[#a88b6a]"
-              >About Us</span
-            >
- 
-  <div class="grid grid-cols-12 gap-6 mt-3">
-    <div class="hidden lg:block lg:col-span-4"></div>
-    <p class="col-span-12 lg:col-span-8 text-xl sm:text-2xl lg:text-[36px] uppercase font-bold leading-[1.3] sm:leading-[1.25] lg:leading-[40px] text-gray-900">
-      I don't simply shoot images
-      <img class="inline size-8 sm:size-10 lg:size-12 mx-1 sm:mx-1.5 align-middle" src="https://framerusercontent.com/images/YPbqvsgTh7mexKu0xFUEcptuSc.png?width=512&height=512" alt="">
-      i carefully preserve
-      <img class="inline size-8 sm:size-10 lg:size-12 mx-1 sm:mx-1.5 align-middle" src="https://framerusercontent.com/images/D2caWVflYcWHVgAwKcrPidEH56w.png?scale-down-to=512&width=1024&height=1024" alt="">
-      genuine feelings, quiet details, and the hidden stories
-      <img class="inline size-8 sm:size-10 lg:size-12 mx-1 sm:mx-1.5 align-middle" src="https://framerusercontent.com/images/cNRTJixJYM4WR4uStzZs3qwhBs.png?scale-down-to=512&width=1024&height=1024" alt="">
-      that make every moment truly meaningful.
-    </p>
+
+
+<!-- ABOUT US  -->
+<section
+  id="about"
+  aria-labelledby="about-heading"
+  class="py-16 sm:py-20 lg:py-28 overflow-hidden "
+>
+
+  <!-- TOP — Label + Heading centered -->
+  <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-12 sm:mb-16">
+    <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase">About Us</span>
+    <h2
+
+    id="about-heading"
+              class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
+      
+    >
+      About SR Film <span class=" text-[#a88b6a]">Photography</span>
+    </h2>
   </div>
-</div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-t border-gray-300">
+  
+  <!-- CENTER CONTENT — Images + Text -->
+  <div class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-        <!-- Top Row -->
-        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300">
-          <img class="w-full h-full object-cover" src="./assets/img/image/image-91.webp" alt="">
+      <!-- LEFT — Overlapping Images -->
+      <div class="relative w-full h-[420px] sm:h-[500px]">
+        <div class="absolute top-0 left-0 w-[72%] h-[75%] rounded-3xl overflow-hidden shadow-lg">
+          <img
+            src="https://marshmallowstudios.in/wp-content/uploads/2023/12/PurvaRohanWedding-889-1-scaled.jpg"
+            alt="Wedding photography by SR Film Photography"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="absolute bottom-0 right-0 w-[58%] h-[55%] rounded-3xl overflow-hidden shadow-xl border-[6px] border-white">
+          <img
+            src="https://marshmallowstudios.in/wp-content/uploads/2023/09/Bharti-Ajay-101-1-scaled.jpg"
+            alt="Couple photography by SR Film Photography"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="absolute bottom-10 left-4 bg-black text-white rounded-2xl px-5 py-4 z-10 shadow-xl flex flex-col items-center min-w-[110px]">
+          <span class="text-[#a88b6a] text-2xl font-bold font-['Instrument_Serif'] leading-none">500+</span>
+          <span class="text-[11px] text-white/70 mt-1 font-medium text-center">Happy Clients</span>
+        </div>
+      </div>
+
+      <!-- RIGHT — Stats + Description + CTA -->
+      <div class="flex flex-col gap-7">
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-4 pb-7 border-b border-[#a88b6a]/20">
+          <div class="flex flex-col gap-1">
+            <div class="flex items-baseline gap-0.5">
+              <span class="text-3xl sm:text-4xl  font-semibold text-gray-900 leading-none">500</span>
+              <span class="text-lg text-[#a88b6a] font-semibold">+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-500 font-['Inter']">Shoots Completed</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div class="flex items-baseline gap-0.5">
+              <span class="text-3xl sm:text-4xl font-semibold text-gray-900 leading-none">200</span>
+              <span class="text-lg text-[#a88b6a] font-semibold">+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-500 font-['Inter']">Weddings Covered</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div class="flex items-baseline gap-0.5">
+              <span class="text-3xl sm:text-4xl font-bold text-gray-900 leading-none">5</span>
+              <span class="text-lg text-[#a88b6a] font-semibold">+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-gray-500 font-['Inter']">Years Experience</p>
+          </div>
         </div>
 
-        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
-
-        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300 p-6 flex flex-col justify-between">
-          <span class="text-sm font-bold uppercase tracking-wide">My Mission</span>
-          <p class="text-sm text-gray-600 font-medium uppercase">To capture authentic stories through timeless, emotional, and honest photography.</p>
+        <!-- Description -->
+        <div class="space-y-4">
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed ">
+            At SR FILM PHOTOGRAPHY, we believe every moment tells a story. Our passion is capturing genuine emotions, beautiful connections, and unforgettable memories through stunning photographs and cinematic films.
+          </p>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed ">
+            With a creative eye and attention to detail, we specialize in wedding photography, pre-wedding shoots, maternity sessions, baby photography, and event coverage creating timeless memories you'll cherish for generations.
+          </p>
         </div>
 
-        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+        <!-- CTA -->
+        <div class="flex flex-1 items-center  gap-4 mt-auto">
 
-        <!-- Bottom Row -->
-        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+           <a
+  href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+  class="group relative inline-flex items-center bg-black text-white justify-center overflow-hidden rounded-full px-6 py-4"
+>
+  <span class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
 
-        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300 p-6 flex flex-col justify-between">
-          <span class="text-sm font-bold uppercase tracking-wide">My Vision</span>
-          <p class="text-sm text-gray-600 font-medium uppercase">To create meaningful imagery that inspires connection and lasting memories.</p>
-        </div>
+  <span class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300">
+    Book a Session
+  </span>
 
-        <div class="hidden lg:block h-80 border-r border-b border-gray-300"></div>
+  <span class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden">
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+    ></i>
 
-        <div class="h-64 sm:h-72 lg:h-80 border-r border-b border-gray-300">
-          <img class="w-full h-full object-cover" src="./assets/img/image/image-32.webp" alt="">
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+    ></i>
+  </span>
+</a>
+          
+          
         </div>
 
       </div>
     </div>
   </div>
+
 </section>
+
+
+ <!-- GALLERY SECTION -->
+<section class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 bg-light-cream lg:px-8">
+  <div class="max-w-7xl mx-auto ">
+    <!-- Header -->
+          <div class="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
+            <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase">Collections</span>
+            <h2
+              id="gallery-heading"
+              class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
+            >
+              Visual Stories in Every Frame
+            </h2>
+             <p
+              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
+            >
+              Explore our collection of candid moments, intimate details, and
+              breathtaking scenes that define each couple's unique love story.
+            </p>
+            
+          </div>
+
+    <!-- Gallery Grid - 3 Columns -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <!-- Row 1 -->
+      <div class="overflow-hidden rounded-lg group">
+        <img 
+          src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/aa7f8e49-eb0b-47ed-8642-7746b6d8c5f4/276A4545-Edit.jpg?format=750w" 
+          alt="Wedding moment" 
+          class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img 
+          src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/44dc6229-19fc-4483-b19e-7e3e2fa66fe6/Wedding-at-bayview-34-980x653.jpg?format=750w" 
+          alt="Wedding moment" 
+          class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img 
+          src="https://marshmallowstudios.in/wp-content/uploads/2025/05/02-Wedding-394-1536x1022.jpg" 
+          alt="Wedding moment" 
+          class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+
+      <!-- Row 2 -->
+      <div class="overflow-hidden rounded-lg group">
+        <img 
+          src="https://marshmallowstudios.in/wp-content/uploads/2023/09/2Engagement-197-2-1536x1022.jpg" 
+          alt="Wedding moment" 
+          class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img 
+          src="https://marshmallowstudios.in/wp-content/uploads/2023/09/5Wedding-232-1536x1022.jpg" 
+          alt="Wedding moment" 
+          class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div class="overflow-hidden rounded-lg group">
+        <img 
+          src="https://marshmallowstudios.in/wp-content/uploads/2023/09/PurvaRohanWedding-481-1536x1024.jpg" 
+          alt="Wedding moment" 
+          class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="flex justify-center">
+
+          <a
+  href="gallery.html"
+  class="group relative inline-flex items-center bg-black text-white justify-center overflow-hidden rounded-full px-6 py-4"
+>
+  <span class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+
+  <span class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300">
+    View Full Gallery
+  </span>
+
+  <span class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden">
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+    ></i>
+
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+    ></i>
+  </span>
+</a>
+
+       
+    </div>
+  </div>
+</section>
+
+
+
 
       <!-- SERVICES SECTION -->
 
       <section
         id="services"
         aria-labelledby="services-heading"
-        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-light-cream"
+        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 "
       >
         <div class="max-w-7xl mx-auto">
           <!-- Header -->
@@ -431,8 +555,8 @@
             class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-12 sm:mb-16"
           >
             <div>
-              <span class="text-sm font-medium text-[#a88b6a]"
-              >What We Capture</span
+              <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase"
+              >Services</span
             >
                
               
@@ -440,7 +564,7 @@
                 id="services-heading"
                 class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight tracking-normal mt-3"
               >
-                Stories Told Through Every Frame
+                What We Capture
               </h2>
             </div>
             <p
@@ -1196,94 +1320,8 @@
         </div>
       </section>
 
-        <section
-        id="gallery"
-        aria-labelledby="gallery-heading"
-        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 "
-      >
-        <div class="max-w-7xl mx-auto">
-          <!-- Header -->
-          <div class="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
-            <span class="text-sm font-medium text-[#a88b6a]">Our Work</span>
-            <h2
-              id="gallery-heading"
-              class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
-            >
-              Visual Stories in Every Frame
-            </h2>
-             <p
-              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
-            >
-              Explore our collection of candid moments, intimate details, and
-              breathtaking scenes that define each couple's unique love story.
-            </p>
-            
-          </div>
-
-          <!-- Gallery -->
-          <div class="wrapper mb-12">
-            <div class="gallery">
-              <img
-                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.09_PM__1__7xEQ-41dx.jpeg?tr=w-600,q-75"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.09_PM_jtmFo6PlY.jpeg?tr=w-600,q-75"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.10_PM__1__mU7tkCuFB.jpeg?tr=w-600,q-75"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.10_PM__2__x6se0kLY_.jpeg?tr=w-600,q-75"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.10_PM_9NG0HJ8ja.jpeg?tr=w-600,q-75"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://ik.imagekit.io/frbjdpcvl/avi-chavan/WhatsApp_Image_2026-05-26_at_6.00.11_PM__1__Z-Zsq48T7.jpeg?tr=w-600,q-75"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/4c098537-78f9-4548-993e-f3117942f027/DSC_3323.jpg?format=750w"
-                alt="Wedding moment"
-              />
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/470dc361-ee10-4631-b141-71f51dfe5e08/PPP01335.jpg?format=750w"
-                alt="Wedding moment"
-              />
-            </div>
-          </div>
-
-          <!-- Button -->
-          <div class="flex justify-center">
-
-            <a href="gallery.html"
-              class=" group relative overflow-hidden transition-all duration-300 md:block bg-black text-white flex items-center hover:text-black text-sm font-medium px-6 py-4  rounded-full transition-colors"
-            >
-                            <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-                            <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">View Full Gallery</span>
-
-                           
-
-<span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
-  <i
-    class="ri-arrow-right-line  absolute hover:text-black inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"
-  ></i>
-
-  <i
-    class="ri-arrow-right-line absolute  inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"
-  ></i>
-</span>
-               
-          </a>
-            
-          </div>
-        </div>
-      </section>
+     
+     
 
       <!-- WHY CHOOSE US SECTION -->
       <section
@@ -1300,7 +1338,7 @@
               id="why-choose-us-heading"
               class="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-gray-900 mb-6 mt-3"
             >
-              Why Families Trust<br />SR Film Photography
+              Why Clients Trust Us
             </h2>
             <p
               class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
@@ -1508,11 +1546,11 @@
       <!-- TESTIMONIALS SECTION -->
       <section
         id="testimonials"
-        class="relative z-[12] overflow-hidden"
-        data-scroll-section
+        class="relative py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 z-[12] bg-[#faf7f2]  overflow-hidden"
+        data-scroll-section 
       >
         <div
-          class="bg-[#faf7f2] w-full px-4 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-24 lg:py-40 flex flex-col lg:flex-row gap-8 lg:gap-16"
+          class=" w-full px-4 max-w-7xl mx-auto  flex flex-col lg:flex-row gap-8 lg:gap-16"
         >
           <!-- LEFT -->
           <div
@@ -1522,15 +1560,17 @@
               class="flex items-start sm:items-end justify-between gap-4 flex-wrap"
             >
               <div>
-                <span class="text-sm font-medium text-[#a88b6a]"
+                <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase"
               >Testimonials</span
             >
                
                 <h2
-                  class="text-[8vw] sm:text-[6vw] lg:text-[5vw] leading-none font-normal text-[#633b2c] font-primary"
+
+                 id="testiominal-heading"
+              class="font-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight text-gray-900  mt-3"
+                 
                 >
-                  Love stories <br />
-                  our couples say
+                  What Our Clients Say
                 </h2>
               </div>
             <div class="flex items-center gap-3">
@@ -1723,16 +1763,32 @@
 <section id="contact" aria-labelledby="contact-heading" class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-[#f2eae1]">
   <div class="max-w-7xl mx-auto">
 
-    <!-- Top Header — full width -->
-    <div class="mb-12 sm:mb-16">
-      <span class="text-sm font-medium text-[#a88b6a]">Get In Touch</span>
-      <h2 id="contact-heading" class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3">
-        Let's Create Beautiful<br />Memories Together
-      </h2>
-      <p class="text-gray-500 text-sm sm:text-base leading-relaxed mt-4 max-w-lg">
-        Whether it's your wedding, maternity journey, baby's first smile, or a special celebration, we're here to capture every moment beautifully.
-      </p>
-    </div>
+     <!-- Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-12 sm:mb-16"
+          >
+            <div>
+              <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase"
+              >Contact Us</span
+            >
+               
+              
+             <h2
+  id="contact-heading"
+  class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight tracking-normal mt-3"
+>
+  Let's Plan Your Shoot
+</h2>
+            </div>
+            <p
+              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl "
+            >
+               Whether it's your wedding, maternity journey, baby's first smile, or a special celebration, we're here to capture every moment beautifully.
+            </p>
+            
+          </div>
+
+   
 
     <!-- Bottom Row: Left info+map | Right form -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -1742,7 +1798,7 @@
 
         <!-- Contact Cards — not full width -->
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="tel:+918850886835" class="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 hover:shadow-md transition-shadow duration-300 w-full md:w-fit">
+          <a href="tel:+918850886835" class="flex flex-1 items-center gap-4 bg-white rounded-2xl px-6 py-5 hover:shadow-md transition-shadow duration-300 w-full md:w-fit">
             <span class="size-10 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]">
               <i class="ri-phone-line"></i>
             </span>
@@ -1752,7 +1808,7 @@
             </div>
           </a>
 
-          <a href="mailto:srfilmphotography@gmail.com" class="flex items-center gap-4 bg-white rounded-2xl px-6 py-5 hover:shadow-md transition-shadow duration-300 w-full md:w-fit">
+          <a href="mailto:srfilmphotography@gmail.com" class="flex flex-1 items-center gap-4 bg-white rounded-2xl px-6 py-5 hover:shadow-md transition-shadow duration-300 w-full md:w-fit">
             <span class="size-10 shrink-0 flex items-center justify-center rounded-full bg-[#efe7da] text-[#a88b6a]">
               <i class="ri-mail-line"></i>
             </span>
@@ -1809,12 +1865,20 @@
         <textarea rows="4" placeholder="Tell us about your event or requirements..."
           class="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#a88b6a] transition-colors bg-[#faf7f2] resize-none"></textarea>
 
-        <button type="submit"
-          class="group relative overflow-hidden bg-black text-white text-sm font-semibold px-8 py-4 rounded-full w-full flex items-center justify-center gap-2 transition-all duration-300">
-          <span class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-          <span class="relative z-10 transition-colors duration-300">Send Inquiry</span>
-          <i class="ri-arrow-right-line relative z-10"></i>
-        </button>
+
+
+           <button type="submit"
+    class="group relative w-full sm:w-auto overflow-hidden transition-all duration-300 bg-[#a88b6a] text-white flex items-center justify-center text-sm font-medium px-6 py-4 rounded-full"
+  >
+    <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-white">Send Inquiry</span>
+    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
+      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
+      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
+    </span>
+  </button>
+
+      
 
       </div>
     </div>
@@ -1852,27 +1916,54 @@
       
   <!-- CTA Buttons -->
 <div class="flex flex-col w-full text-center sm:w-fit mx-auto sm:flex-row gap-4 items-center justify-center">
-  <a href="gallery.html"
-    class="group relative w-full sm:w-auto overflow-hidden transition-all duration-300 bg-black text-white flex items-center justify-center text-center text-sm font-medium px-6 py-4 rounded-full"
-  >
-    <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">Book A Session</span>
-    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
-      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
-      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
-    </span>
-  </a>
 
-  <a href="gallery.html"
-    class="group relative w-full sm:w-auto overflow-hidden transition-all duration-300 bg-white text-black flex items-center justify-center text-sm font-medium px-6 py-4 rounded-full"
-  >
-    <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-white">View Full Gallery</span>
-    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
-      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
-      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
-    </span>
-  </a>
+
+  <a
+  href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+  class="group relative inline-flex items-center bg-black text-white justify-center overflow-hidden rounded-full px-6 py-4"
+>
+  <span class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+
+  <span class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300">
+    Book a Session
+  </span>
+
+  <span class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden">
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+    ></i>
+
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+    ></i>
+  </span>
+</a>
+          
+
+  
+ 
+
+   <a
+  href="gallery.html"
+  class="group relative inline-flex items-center bg-[#a88b6a] text-white justify-center overflow-hidden rounded-full px-6 py-4"
+>
+  <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
+
+  <span class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300">
+    View Full Gallery
+  </span>
+
+  <span class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden">
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+    ></i>
+
+    <i
+      class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+    ></i>
+  </span>
+</a>
+          
 </div>
 
   
@@ -1950,7 +2041,7 @@
         <h4 class="text-white text-lg font-light" style="font-family:'Georgia',serif;">Contact</h4>
         <div class="flex flex-col gap-4">
           <p class="text-white/40 text-xs tracking-widest uppercase">Our Location</p>
-          <p class="text-white/70 text-sm leading-relaxed">SR Film Photography<br>Dhayari, Pune,<br>Maharashtra 411041</p>
+          <p class="text-white/70 text-sm leading-relaxed">SR Film Photography Dhayari, Pune,<br>Maharashtra 411041</p>
           <a href="mailto:srfilmphotography@gmail.com" class="flex items-center gap-3 text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">
             <i class="ri-mail-line text-base"></i>
             srfilmphotography@gmail.com
@@ -1970,7 +2061,7 @@
 
     <!-- Bottom bar -->
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-white/40 text-xs">© 2025 SR Film Photography. All rights reserved.</p>
+      <p class="text-white/40 text-xs">© <span id="year"></span> SR Film Photography. All rights reserved.</p>
       <div class="flex items-center gap-6">
         <a href="#" class="text-white/40 text-xs hover:text-white/70 transition-colors duration-200">Terms & Conditions</a>
         <span class="text-white/20">|</span>
@@ -1995,9 +2086,9 @@
 
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       <script src="./assets/js/swipers.js"></script>
-      <script src="./assets/js/mobile-menu.js"></script>
-      <script src="./assets/js/faq.js"></script>
-      <script src="./assets/js/contact-combo.js"></script>
+      
+     
+      
 
       <script src="./assets/js/loader.js"></script>
 
@@ -2123,7 +2214,13 @@
 })();
 </script>
 
-      <script src="./assets/js/loader.js"></script>
+      <!-- <script src="./assets/js/loader.js"></script> -->
+
+          <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+<script>
+  new PureCounter();
+</script>
     </div>
   </body>
 </html>
