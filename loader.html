@@ -165,88 +165,65 @@ The result? Photographs that tell your story for a lifetime.
 
 
 
-   <section
-        id="gallery"
-        aria-labelledby="gallery-heading"
-        class="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 "
-      >
-        <div class="max-w-7xl mx-auto">
-          <!-- Header -->
-          <div class="mb-12 sm:mb-16 text-center max-w-3xl mx-auto">
-            <span class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase">Collections</span>
-            <h2
-              id="gallery-heading"
-              class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-gray-900 leading-tight mt-3 mb-4"
-            >
-              Visual Stories in Every Frame
-            </h2>
-             <p
-              class="text-gray-600 text-sm sm:text-base font-secondary leading-relaxed max-w-xl mx-auto"
-            >
-              Explore our collection of candid moments, intimate details, and
-              breathtaking scenes that define each couple's unique love story.
-            </p>
-            
-          </div>
+   <!-- LOADER -->
+<div id="loader" style="position:fixed;inset:0;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999999999;overflow:hidden;">
 
-<div>
+  <!-- Scanlines only (removed heavy grain animation) -->
+  <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px);"></div>
 
-  <!-- Top grid -->
-<div class="gallery-top">
-  <div class="item-1 overflow-hidden rounded-lg group">
-    <img src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/aa7f8e49-eb0b-47ed-8642-7746b6d8c5f4/276A4545-Edit.jpg?format=750w" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-  <div class="item-2 overflow-hidden rounded-lg group">
-    <img src="https://images.squarespace-cdn.com/content/v1/6744250b81521d675423a80c/44dc6229-19fc-4483-b19e-7e3e2fa66fe6/Wedding-at-bayview-34-980x653.jpg?format=750w" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-  <div class="item-3 overflow-hidden rounded-lg group">
-    <img src="https://marshmallowstudios.in/wp-content/uploads/2025/05/02-Wedding-394-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-  <div class="item-4 overflow-hidden rounded-lg group">
-    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/2Engagement-197-2-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-  <div class="item-5 overflow-hidden rounded-lg group">
-    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/5Wedding-232-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-</div>
+  <!-- Corner brackets -->
+  <div style="position:absolute;top:20px;left:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
+  <div style="position:absolute;top:20px;right:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
+  <div style="position:absolute;bottom:20px;left:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
+  <div style="position:absolute;bottom:20px;right:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
 
-<!-- Bottom strip -->
-<div class="gallery-bottom">
-  <div class="item-b1 overflow-hidden rounded-lg group">
-    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/PurvaRohanWedding-481-1536x1024.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-  <div class="item-b2 overflow-hidden rounded-lg group">
-    <img src="https://marshmallowstudios.in/wp-content/uploads/2025/05/03-Haldi-99-1536x1022.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-  </div>
-  <div class="item-b3 overflow-hidden rounded-lg group">
-    <img src="https://marshmallowstudios.in/wp-content/uploads/2023/09/PurvaRohanWedding-335-1536x1024.jpg" alt="Wedding moment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+  <!-- Center content -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:28px;position:relative;z-index:5;">
+
+    <!-- Ring + GIF -->
+    <div style="position:relative;width:110px;height:110px;">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;animation:ring-spin 2.4s linear infinite;will-change:transform;" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="55" cy="55" r="50" stroke="rgba(168,139,106,0.15)" stroke-width="1"/>
+        <circle cx="55" cy="55" r="50" stroke="url(#ag)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="180 135"/>
+        <defs>
+          <linearGradient id="ag" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#a88b6a"/>
+            <stop offset="100%" stop-color="rgba(168,139,106,0)"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div style="position:absolute;inset:10px;border-radius:50%;overflow:hidden;background:#1a1a1a;">
+        <img
+          src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybGE2OG1vNnVpcW15Z2I4cjR2Z2JlYmZxNmdvcHRwaHE0N2RkYWU5ZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/YjQk70gmQLDmJTawn0/source.gif"
+          alt=""
+          fetchpriority="high"
+          decoding="async"
+          style="width:100%;height:100%;object-fit:cover;border-radius:50%;"
+        />
+      </div>
+    </div>
+
+    <!-- Progress bar (removed box-shadow) -->
+    <div style="width:160px;height:1px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden;">
+      <div id="loader-fill" style="height:100%;width:0%;background:linear-gradient(90deg,#a88b6a,#d4a96a);transition:width 0.1s linear;will-change:width;"></div>
+    </div>
+
   </div>
 </div>
-</div>
 
-          <!-- Button -->
-          <div class="flex justify-center">
 
-            <a href="gallery.html"
-              class=" group relative overflow-hidden transition-all duration-300 md:block bg-black text-white flex items-center hover:text-black text-sm font-medium px-6 py-4  rounded-full transition-colors"
-            >
-                            <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-                            <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">View Full Gallery</span>
+<script>
+  const btn = document.querySelector('.qr-btn');
+  const popup = document.querySelector('.qr-popup');
+  const wrapper = document.getElementById('qrWrapper');
 
-                           
+  // Mobile tap toggle
+  btn.addEventListener('click', function (e) {
+    if (window.innerWidth < 768) {
+      e.stopPropagation();
+      popup.classList.toggle('open');
+    }
+  });
 
-<span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
-  <i
-    class="ri-arrow-right-line  absolute hover:text-black inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"
-  ></i>
-
-  <i
-    class="ri-arrow-right-line absolute  inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"
-  ></i>
-</span>
-               
-          </a>
-            
-          </div>
-        </div>
-      </section>
+  
+</script>

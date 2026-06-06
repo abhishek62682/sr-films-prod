@@ -28,256 +28,293 @@
   </head>
   <body>
 
-  <!-- LOADER -->
-<div id="loader" style="position:fixed;inset:0;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999999999;overflow:hidden;">
+    <div class="root">
 
-  <!-- Scanlines only (removed heavy grain animation) -->
-  <div style="position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,255,255,0.012) 3px,rgba(255,255,255,0.012) 4px);"></div>
-
-  <!-- Corner brackets -->
-  <div style="position:absolute;top:20px;left:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
-  <div style="position:absolute;top:20px;right:20px;width:16px;height:16px;border-top:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
-  <div style="position:absolute;bottom:20px;left:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-left:1px solid rgba(168,139,106,0.5);"></div>
-  <div style="position:absolute;bottom:20px;right:20px;width:16px;height:16px;border-bottom:1px solid rgba(168,139,106,0.5);border-right:1px solid rgba(168,139,106,0.5);"></div>
-
-  <!-- Center content -->
-  <div style="display:flex;flex-direction:column;align-items:center;gap:28px;position:relative;z-index:5;">
-
-    <!-- Ring + GIF -->
-    <div style="position:relative;width:110px;height:110px;">
-      <svg style="position:absolute;inset:0;width:100%;height:100%;animation:ring-spin 2.4s linear infinite;will-change:transform;" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="55" cy="55" r="50" stroke="rgba(168,139,106,0.15)" stroke-width="1"/>
-        <circle cx="55" cy="55" r="50" stroke="url(#ag)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="180 135"/>
-        <defs>
-          <linearGradient id="ag" x1="0" y1="0" x2="110" y2="110" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#a88b6a"/>
-            <stop offset="100%" stop-color="rgba(168,139,106,0)"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div style="position:absolute;inset:10px;border-radius:50%;overflow:hidden;background:#1a1a1a;">
-        <img
-          src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybGE2OG1vNnVpcW15Z2I4cjR2Z2JlYmZxNmdvcHRwaHE0N2RkYWU5ZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/YjQk70gmQLDmJTawn0/source.gif"
-          alt=""
-          fetchpriority="high"
-          decoding="async"
-          style="width:100%;height:100%;object-fit:cover;border-radius:50%;"
-        />
-      </div>
-    </div>
-
-    <!-- Progress bar (removed box-shadow) -->
-    <div style="width:160px;height:1px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden;">
-      <div id="loader-fill" style="height:100%;width:0%;background:linear-gradient(90deg,#a88b6a,#d4a96a);transition:width 0.1s linear;will-change:width;"></div>
-    </div>
-
-  </div>
-</div>
-   <!-- Floating QR + WhatsApp + Call Buttons -->
-<div
-  class="fixed bottom-0 left-0 right-0 z-[9999] h-[8svh] md:h-auto flex md:bottom-6 md:right-6 md:left-auto md:flex-col-reverse gap-0 sm:gap-2 p-0 bg-transparent backdrop-blur-sm md:backdrop-blur-none"
->
-  <!-- Call -->
-  <a
-    href="tel:+918767591139"
-    class="flex-1 md:flex-none inline-flex items-center justify-center bg-black text-white md:w-12 md:h-12 md:rounded-full hover:bg-neutral-800 active:scale-[0.97] transition-all duration-200 shadow-lg"
-    aria-label="Call us now"
-  >
-    <i class="ri-phone-line text-xl"></i>
-    <span class="ml-2 text-sm font-semibold md:hidden">Call Now</span>
-  </a>
-
-  <!-- WhatsApp -->
-  <a
-    href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="flex-1 md:flex-none inline-flex items-center justify-center bg-[#25D366] text-white md:w-12 md:h-12 md:rounded-full hover:bg-[#1ebe5d] active:scale-[0.97] transition-all duration-200 shadow-lg"
-    aria-label="Chat on WhatsApp"
-  >
-    <i class="ri-whatsapp-line text-xl"></i>
-    <span class="ml-2 text-sm font-semibold md:hidden">WhatsApp</span>
-  </a>
-
-  <!-- QR Code -->
-  <div class="qr-wrap flex-1 md:flex-none relative" id="qrWrapper">
-
-    <!-- Popup -->
-    <div class="qr-popup absolute bottom-full right-0 mb-3 bg-white rounded-2xl shadow-xl p-4 text-center w-44 border  border-neutral-100">
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://sr-films-prod.vercel.app/gallery.html"
-        width="140"
-        height="140"
-        alt="QR code to gallery"
-        class="rounded-lg mx-auto"
-      />
-      <p class="text-xs text-neutral-500 mt-2">Scan to view gallery</p>
-    </div>
-
-    <!-- Button -->
-    <button
-      class="qr-btn w-full h-full md:w-12 md:h-12 md:rounded-full inline-flex items-center justify-center bg-white text-black border border-neutral-200 active:scale-[0.97] transition-all duration-200 shadow-lg"
-      aria-label="Show QR Code"
-    >
-      <i class="ri-qr-code-line text-xl"></i>
-      <span class="ml-2 text-sm font-semibold md:hidden">QR Code</span>
-    </button>
-  </div>
-</div>
-
-<style>
-  /* Popup hidden by default */
-  .qr-popup {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 99999; /* Ensure it's above everything */
-}
-
-  /* Desktop: hover on the whole wrap keeps popup open */
-  @media (min-width: 768px) {
-    .qr-wrap:hover .qr-popup {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-      z-index: 9999999999999;
-    }
-  }
-
-  /* Mobile: toggle via JS class */
-  .qr-popup.open {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-</style>
-
-<script>
-  const btn = document.querySelector('.qr-btn');
-  const popup = document.querySelector('.qr-popup');
-  const wrapper = document.getElementById('qrWrapper');
-
-  // Mobile tap toggle
-  btn.addEventListener('click', function (e) {
-    if (window.innerWidth < 768) {
-      e.stopPropagation();
-      popup.classList.toggle('open');
-    }
-  });
-
-  
-</script>
-
-
-
-        <!-- NAVBAR -->
-<nav id="navbar" class="px-4 sm:px-6 md:px-12 lg:px-16 pt-6 md:pt-8">
-  <div class="flex items-center justify-between bg-black/70 backdrop-blur-md border border-white/10 rounded-xl px-4 py-2.5">
-    
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-3">
-      <img
-        class="w-10 h-10 rounded-[8px] object-cover border border-yellow-700/40"
-        src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
-        alt="SR Film Photography Logo"
-      />
-      <div class="flex flex-col">
-        <span class="text-sm font-semibold text-white leading-none">SR Films</span>
-        <span class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5">Photography</span>
-      </div>
-    </a>
-
-    <!-- Desktop Links -->
-    <ul class="hidden md:flex items-center gap-6 lg:gap-8">
-      <li><a href="/" class="text-sm text-white/90 hover:text-white transition-colors">Home</a></li>
-      <li><a href="#about" class="text-sm text-white/90 hover:text-white transition-colors">About Us</a></li>
-      <li><a href="#services" class="text-sm text-white/90 hover:text-white transition-colors">Services</a></li>
-      <li><a href="#why-choose-us" class="text-sm text-white/90 hover:text-white transition-colors">Why Choose Us</a></li>
-      <li><a href="#gallery" class="text-sm text-white/90 hover:text-white transition-colors">Our Work</a></li>
-      <li><a href="#testimonials" class="text-sm text-white/90 hover:text-white transition-colors">Testimonials</a></li>
-      <li><a href="#contact" class="text-sm text-white/90 hover:text-white transition-colors">Contact Us</a></li>
-    </ul>
-
-    <div class="flex items-center gap-3">
-      <!-- Book a Session — desktop -->
-      <a href="index.html#contact"
-        class="hidden group relative overflow-hidden transition-all duration-300 md:block bg-white text-black text-sm font-medium px-6 py-2 rounded-lg"
+      <!-- Floating QR + WhatsApp + Call Buttons -->
+      <div
+        class="fixed bottom-0 left-0 right-0 z-9999 h-[8svh] md:h-auto flex md:bottom-6 md:right-6 md:left-auto md:flex-col-reverse gap-0 sm:gap-2 p-0 bg-transparent backdrop-blur-sm md:backdrop-blur-none"
       >
-        <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-        <span class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white">Book a Session</span>
-      </a>
+        <a
+          href="tel:+918767591139"
+          class="flex-1 md:flex-none inline-flex items-center justify-center bg-black text-white md:w-12 md:h-12 md:rounded-full hover:bg-neutral-800 active:scale-[0.97] transition-all duration-200 shadow-lg"
+          aria-label="Call us now"
+        >
+          <i class="ri-phone-line text-xl"></i>
+          <span class="ml-2 text-sm font-semibold md:hidden">Call Now</span>
+        </a>
 
-      <!-- Hamburger — mobile -->
-      <button
-        onclick="openSidebar()"
-        class="md:hidden flex flex-col gap-[5px] p-2"
-        aria-label="Open menu"
-      >
-        <span class="block w-6 h-0.5 bg-white rounded"></span>
-        <span class="block w-6 h-0.5 bg-white rounded"></span>
-        <span class="block w-4 h-0.5 bg-white rounded"></span>
-      </button>
-    </div>
-  </div>
-</nav>
+        <a
+          href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 md:flex-none inline-flex items-center justify-center bg-[#25D366] text-white md:w-12 md:h-12 md:rounded-full hover:bg-[#1ebe5d] active:scale-[0.97] transition-all duration-200 shadow-lg"
+          aria-label="Chat on WhatsApp"
+        >
+          <i class="ri-whatsapp-line text-xl"></i>
+          <span class="ml-2 text-sm font-semibold md:hidden">WhatsApp</span>
+        </a>
 
-<!-- Mobile Sidebar -->
-<div
-  id="mobile-sidebar"
-  class="fixed inset-y-0 right-0 w-72 bg-white z-[200] shadow-2xl flex flex-col p-8 gap-6"
->
-  <div class="flex justify-between items-center">
-    <a href="index.html" class="flex items-center gap-3">
-      <img
-        class="w-9 h-9 rounded-[8px] object-cover border border-yellow-700/40"
-        src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
-        alt="SR Film Photography Logo"
-      />
-      <div class="flex flex-col">
-        <span class="text-sm font-semibold text-gray-900 leading-none">SR Films</span>
-        <span class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5">Photography</span>
+        <div class="qr-wrap flex-1 md:flex-none relative" id="qrWrapper">
+          <div
+            class="qr-popup absolute bottom-full right-0 mb-3 bg-white rounded-2xl shadow-xl p-4 text-center w-44 border border-neutral-100"
+          >
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://sr-films-prod.vercel.app/gallery.html"
+              width="140"
+              height="140"
+              alt="QR code to gallery"
+              class="rounded-lg mx-auto"
+            />
+            <p class="text-xs text-neutral-500 mt-2">Scan to view gallery</p>
+          </div>
+
+          <button
+            class="qr-btn w-full h-full md:w-12 md:h-12 md:rounded-full inline-flex items-center justify-center bg-white text-black border border-neutral-200 active:scale-[0.97] transition-all duration-200 shadow-lg"
+            aria-label="Show QR Code"
+          >
+            <i class="ri-qr-code-line text-xl"></i>
+            <span class="ml-2 text-sm font-semibold md:hidden">QR Code</span>
+          </button>
+        </div>
       </div>
-    </a>
-    <button onclick="closeSidebar()" class="p-2 text-gray-500 hover:text-gray-900">
-      <i class="ri-close-line text-2xl"></i>
-    </button>
-  </div>
 
-  <ul class="flex flex-col gap-5 mt-4">
-    <li><a href="/" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Home</a></li>
-    <li><a href="#about" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">About Us</a></li>
-    <li><a href="#services" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Services</a></li>
-    <li><a href="#why-choose-us" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Why Choose Us</a></li>
-    <li><a href="#gallery" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Our Work</a></li>
-    <li><a href="#testimonials" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Testimonials</a></li>
-    <li><a href="#contact" onclick="closeSidebar()" class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors">Contact Us</a></li>
-  </ul>
+      <!-- NAVBAR -->
+      <nav id="navbar" class="px-4 sm:px-6 md:px-12 lg:px-16 pt-6 md:pt-8">
+        <div
+          class="flex items-center justify-between bg-black/70 backdrop-blur-md border border-white/10 rounded-xl px-4 py-2.5"
+        >
+          <a href="/" class="flex items-center gap-3">
+            <img
+              class="w-10 h-10 rounded-lg object-cover border border-yellow-700/40"
+              src="/assets/img/logo/logo.webp"
+              alt="SR Film Photography Logo"
+            />
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold text-white leading-none"
+                >SR Films</span
+              >
+              <span
+                class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5"
+                >Photography</span
+              >
+            </div>
+          </a>
 
-  <a href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
-    class="group mt-auto relative overflow-hidden transition-all duration-300 bg-white text-black text-center text-sm font-medium px-6 py-4 rounded-full border border-gray-200"
-  >
-    <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-    <span class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white">Book a Session</span>
-  </a>
-</div>
+          <ul class="hidden md:flex items-center gap-6 lg:gap-8">
+            <li>
+              <a
+                href="/"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#why-choose-us"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >Why Choose Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >Our Work</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-sm text-white/90 hover:text-white transition-colors"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
 
-<!-- Sidebar Overlay -->
-<div
-  id="sidebar-overlay"
-  onclick="closeSidebar()"
-  class="fixed inset-0 bg-black/40 z-[150] hidden"
-></div>
+          <div class="flex items-center gap-3">
+            <a
+              href="index.html#contact"
+              class="hidden group relative overflow-hidden transition-all duration-300 md:block bg-white text-black text-sm font-medium px-6 py-2 rounded-lg"
+            >
+              <span
+                class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"
+              ></span>
+              <span
+                class="relative z-10 px-2.5 transition-colors duration-300 group-hover:text-white"
+                >Book a Session</span
+              >
+            </a>
+
+            <button
+              onclick="openSidebar()"
+              class="md:hidden flex flex-col gap-1.25 p-2"
+              aria-label="Open menu"
+            >
+              <span class="block w-6 h-0.5 bg-white rounded"></span>
+              <span class="block w-6 h-0.5 bg-white rounded"></span>
+              <span class="block w-4 h-0.5 bg-white rounded"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Sidebar -->
+      <div
+        id="mobile-sidebar"
+        class="fixed z-200 inset-y-0 right-0 w-72 bg-white  shadow-2xl flex flex-col p-8 gap-6"
+      >
+        <div class="flex justify-between items-center">
+          <a href="index.html" class="flex items-center gap-3">
+            <img
+              class="w-9 h-9 rounded-lg object-cover border border-yellow-700/40"
+              src="/assets/img/logo/logo.webp"
+              alt="SR Film Photography Logo"
+            />
+            <div class="flex flex-col">
+              <span class="text-sm font-semibold text-gray-900 leading-none"
+                >SR Films</span
+              >
+              <span
+                class="text-sm font-semibold text-[#a88b6a] leading-none mt-0.5"
+                >Photography</span
+              >
+            </div>
+          </a>
+          <button
+            onclick="closeSidebar()"
+            class="p-2 text-gray-500 hover:text-gray-900"
+          >
+            <i class="ri-close-line text-2xl"></i>
+          </button>
+        </div>
+
+        <ul class="flex flex-col gap-5 mt-4">
+          <li>
+            <a
+              href="/"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#why-choose-us"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >Why Choose Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#gallery"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >Our Work</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              onclick="closeSidebar()"
+              class="text-base font-medium text-gray-700 hover:text-[#a88b6a] transition-colors"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+
+        <a
+          href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+          class="group relative inline-flex items-center bg-black text-white justify-center overflow-hidden rounded-full px-6 py-4"
+        >
+          <span
+            class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"
+          ></span>
+
+          <span
+            class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300"
+          >
+            Book a Session
+          </span>
+
+          <span
+            class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden"
+          >
+            <i
+              class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+            ></i>
+
+            <i
+              class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+            ></i>
+          </span>
+        </a>
+      </div>
+
+      <!-- Sidebar Overlay -->
+      <div
+        id="sidebar-overlay"
+        onclick="closeSidebar()"
+        class="fixed inset-0 bg-black/40 z-150 hidden"
+      ></div>
 
 
-   
-    
-    
+
+
+      <div class="main">
+
+
+         
    <section
   class="relative h-[50vh] sm:h-[55vh] lg:h-[60vh] flex items-end overflow-hidden"
 >
   <img
-    src="https://cdn.prod.website-files.com/69dcca29a71a4cd598efb43c/69dcca29a71a4cd598efb48b_Tropical%20Greenery%201-about%20background%20image.webp"
+    src="/assets/img/misc/banner.webp"
     alt="SR Film Photography gallery banner"
     class="absolute inset-0 w-full h-full object-cover object-top"
   />
@@ -323,211 +360,386 @@
 
 
         <!-- CTA SECTION -->
-<section class="relative py-20 sm:py-28 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-  
-  <!-- Background Image -->
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="https://cdn.prod.website-files.com/69dcca29a71a4cd598efb43c/69dcca29a71a4cd598efb48b_Tropical%20Greenery%201-about%20background%20image.webp"
-      alt=""
-      class="w-full h-full object-cover"
-    />
-    <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
-  </div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="max-w-3xl mx-auto text-center">
-      <!-- Label -->
-      <span class="text-sm font-medium text-[#d6bfa7]">Your Story Awaits</span>
-      
-      <!-- Heading -->
-      <h2 class="font-primary text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-tight mt-4 mb-6">
-        Let's Create <br />Timeless Memories
-      </h2>
-      
-      <!-- Description -->
-      <p class="text-white/70 text-base sm:text-lg leading-relaxed mx-auto mb-10">
-        Book your photography session today and let us capture the moments that matter most. From weddings to maternity shoots, we're here to preserve your beautiful stories.
-      </p>
-      
-  <!-- CTA Buttons -->
-<div class="flex flex-col w-full text-center sm:w-fit mx-auto sm:flex-row gap-4 items-center justify-center">
-  <a href="gallery.html"
-    class="group relative w-full sm:w-auto overflow-hidden transition-all duration-300 bg-black text-white flex items-center justify-center text-center text-sm font-medium px-6 py-4 rounded-full"
-  >
-    <span class="absolute inset-0 translate-y-full bg-white transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-black">Book A Session</span>
-    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
-      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
-      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
-    </span>
-  </a>
-
-  <a href="gallery.html"
-    class="group relative w-full sm:w-auto overflow-hidden transition-all duration-300 bg-white text-black flex items-center justify-center text-sm font-medium px-6 py-4 rounded-full"
-  >
-    <span class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"></span>
-    <span class="relative z-10 font-semibold px-2.5 transition-colors duration-300 group-hover:text-white">View Full Gallery</span>
-    <span class="relative inline-flex w-4 items-center font-semibold h-4 overflow-hidden">
-      <i class="ri-arrow-right-line absolute inset-0 transition-all duration-300 ease-out group-hover:translate-x-4"></i>
-      <i class="ri-arrow-right-line absolute inset-0 -translate-x-4 transition-all duration-300 ease-out group-hover:translate-x-0"></i>
-    </span>
-  </a>
-</div>
-
-  
-</section>
-
-<!-- FOOTER -->
-<footer class="relative text-white overflow-hidden" style="background:#0a0a0a;">
-  <!-- Animated golden drop lines -->
-  <div id="footer-lines" class="absolute inset-0 pointer-events-none z-0"></div>
-
-  <!-- Main content -->
-  <div class="relative z-10 max-w-screen-xl mx-auto px-6 md:px-12 lg:px-16 pt-24 pb-10">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
-
-      <!-- Col 1 — Logo + desc -->
-      <div class="flex flex-col gap-6">
-        <div class="flex items-center gap-3">
+      <section
+        class="relative py-20 sm:py-28 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      >
+        <div class="absolute inset-0 z-0">
           <img
-            class="w-12 h-12 rounded-[8px] object-cover border border-[#a88b6a]/40"
-            src="https://sr-photography-kfu8.vercel.app/Images/logo.jpg"
-            alt="SR Film Photography Logo"
+            src="/assets/img/misc/banner.webp"
+            alt=""
+            class="w-full h-full object-cover"
           />
-          <div class="flex flex-col">
-            <span class="text-base font-semibold text-white leading-tight">SR Films</span>
-            <span class="text-base font-semibold text-[#a88b6a] leading-tight">Photography</span>
+          <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="max-w-3xl mx-auto text-center">
+            <span
+              class="text-sm font-medium text-[#a88b6a] tracking-widest uppercase"
+              >Your Story Awaits</span
+            >
+
+            <h2
+              class="font-primary text-4xl sm:text-5xl lg:text-6xl font-medium text-white leading-tight mt-4 mb-6"
+            >
+              Let's Create <br />Timeless Memories
+            </h2>
+
+            <p
+              class="text-white/70 text-base sm:text-lg leading-relaxed mx-auto mb-10"
+            >
+              Book your photography session today and let us capture the moments
+              that matter most. From weddings to maternity shoots, we're here to
+              preserve your beautiful stories.
+            </p>
+
+            <div
+              class="flex flex-col w-full sm:w-fit sm:flex-row gap-4 items-center justify-center mx-auto"
+            >
+              <a
+                href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+                class="group relative inline-flex items-center bg-black text-white justify-center overflow-hidden rounded-full px-6 py-4"
+              >
+                <span
+                  class="absolute inset-0 translate-y-full bg-[#a88b6a] transition-transform duration-300 ease-out group-hover:translate-y-0"
+                ></span>
+
+                <span
+                  class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300"
+                >
+                  Book a Session
+                </span>
+
+                <span
+                  class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden"
+                >
+                  <i
+                    class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+                  ></i>
+                  <i
+                    class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+                  ></i>
+                </span>
+              </a>
+
+              <a
+                href="gallery.html"
+                class="group relative inline-flex items-center bg-[#a88b6a] text-white justify-center overflow-hidden rounded-full px-6 py-4"
+              >
+                <span
+                  class="absolute inset-0 translate-y-full bg-black transition-transform duration-300 ease-out group-hover:translate-y-0"
+                ></span>
+
+                <span
+                  class="relative z-10 font-semibold text-sm px-2.5 transition-colors duration-300"
+                >
+                  View Full Gallery
+                </span>
+
+                <span
+                  class="relative z-10 flex h-5 w-5 items-center justify-center overflow-hidden"
+                >
+                  <i
+                    class="ri-arrow-right-line absolute transition-all duration-300 ease-out -translate-x-4 group-hover:translate-x-0"
+                  ></i>
+                  <i
+                    class="ri-arrow-right-line absolute transition-all duration-300 ease-out translate-x-0 group-hover:translate-x-4"
+                  ></i>
+                </span>
+              </a>
+            </div>
           </div>
         </div>
-        <p class="text-white/50 text-sm leading-relaxed max-w-xs">
-          Capturing life's most precious moments  from weddings and pre-wedding shoots to maternity, baby, and event photography.
-        </p>
-        <div class="flex items-center gap-3">
-          <a href="https://www.instagram.com/srpf_photo_film/" class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300">
-            <i class="ri-instagram-line text-base"></i>
-          </a>
-          <a href="#" class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300">
-            <i class="ri-facebook-circle-line text-base"></i>
-          </a>
-          <a href="#" class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300">
-            <i class="ri-youtube-line text-base"></i>
-          </a>
-          <a href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!" target="_blank" class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300">
-            <i class="ri-whatsapp-line text-base"></i>
-          </a>
-        </div>
-      </div>
+      </section>
 
-      <!-- Col 2 — Quick Links -->
-      <div class="flex flex-col gap-6">
-        <h4 class="text-white text-lg font-light" style="font-family:'Georgia',serif;">Quick Links</h4>
-        <nav class="flex flex-col gap-4">
-          <a href="index.html" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Home</a>
-          <a href="index.html#about" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">About Us</a>
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Our Services</a>
-          <a href="index.html#gallery" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Gallery</a>
-          <a href="index.html#testimonials" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Testimonials</a>
-          <a href="index.html#contact" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Contact Us</a>
-        </nav>
-      </div>
+      <!-- FOOTER  -->
+      <footer
+        class="relative text-white overflow-hidden"
+        style="background: #0a0a0a"
+      >
+        <div
+          id="footer-lines"
+          class="absolute inset-0 pointer-events-none z-0"
+        ></div>
 
-      <!-- Col 3 — Services -->
-      <div class="flex flex-col gap-6">
-        <h4 class="text-white text-lg font-light" style="font-family:'Georgia',serif;">Services</h4>
-        <nav class="flex flex-col gap-4">
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Wedding Photography</a>
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Pre-Wedding Shoots</a>
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Cinematic Wedding Films</a>
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Maternity Photography</a>
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Baby & Kids Photography</a>
-          <a href="index.html#services" class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">Event Photography</a>
-        </nav>
-      </div>
+        <div
+          class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-24 pb-10"
+        >
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20"
+          >
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-3">
+                <img
+                  class="w-12 h-12 rounded-lg object-cover border border-[#a88b6a]/40"
+                  src="/assets/img/logo/logo.webp"
+                  alt="SR Film Photography Logo"
+                />
+                <div class="flex flex-col">
+                  <span class="text-base font-semibold text-white leading-tight"
+                    >SR Films</span
+                  >
+                  <span
+                    class="text-base font-semibold text-[#a88b6a] leading-tight"
+                    >Photography</span
+                  >
+                </div>
+              </div>
+              <p class="text-white/50 text-sm leading-relaxed max-w-xs">
+                Capturing life's most precious moments from weddings and
+                pre-wedding shoots to maternity, baby, and event photography.
+              </p>
+              <div class="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/srpf_photo_film/"
+                  class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300"
+                >
+                  <i class="ri-instagram-line text-base"></i>
+                </a>
+                <a
+                  href="#"
+                  class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300"
+                >
+                  <i class="ri-facebook-circle-line text-base"></i>
+                </a>
+                <a
+                  href="#"
+                  class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300"
+                >
+                  <i class="ri-youtube-line text-base"></i>
+                </a>
+                <a
+                  href="https://wa.me/918767591139?text=Hi%20SR%20Film%20Photography%2C%20I%20would%20like%20to%20book%20a%20session!"
+                  target="_blank"
+                  class="size-9 flex items-center justify-center rounded-full bg-white/5 text-white/50 hover:bg-[#a88b6a] hover:text-white transition-all duration-300"
+                >
+                  <i class="ri-whatsapp-line text-base"></i>
+                </a>
+              </div>
+            </div>
 
-      <!-- Col 4 — Contact -->
-      <div class="flex flex-col gap-6">
-        <h4 class="text-white text-lg font-light" style="font-family:'Georgia',serif;">Contact</h4>
-        <div class="flex flex-col gap-4">
-          <p class="text-white/40 text-xs tracking-widest uppercase">Our Location</p>
-          <p class="text-white/70 text-sm leading-relaxed">SR Film Photography<br>Dhayari, Pune,<br>Maharashtra 411041</p>
-          <a href="mailto:srfilmphotography@gmail.com" class="flex items-center gap-3 text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">
-            <i class="ri-mail-line text-base"></i>
-            srfilmphotography@gmail.com
-          </a>
-          <a href="tel:+918850886835" class="flex items-center gap-3 text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200">
-            <i class="ri-phone-line text-base"></i>
-            +91 87675 91139
-          </a>
-          <div class="flex items-center gap-3 text-white/60 text-sm">
-            <i class="ri-time-line text-base"></i>
-            Mon – Sun: 9 AM – 8 PM
+            <div class="flex flex-col gap-6">
+              <h4
+                class="text-white text-lg font-light"
+                style="font-family: &quot;Georgia&quot;, serif"
+              >
+                Quick Links
+              </h4>
+              <nav class="flex flex-col gap-4">
+                <a
+                  href="index.html"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Home</a
+                >
+                <a
+                  href="index.html#about"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >About Us</a
+                >
+                <a
+                  href="index.html#services"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Our Services</a
+                >
+                <a
+                  href="index.html#gallery"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Gallery</a
+                >
+                <a
+                  href="index.html#testimonials"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Testimonials</a
+                >
+                <a
+                  href="index.html#contact"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Contact Us</a
+                >
+              </nav>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <h4
+                class="text-white text-lg font-light"
+                style="font-family: &quot;Georgia&quot;, serif"
+              >
+                Services
+              </h4>
+              <nav class="flex flex-col gap-4">
+                <a
+                  href="gallery.html?category=wedding-photography"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Wedding Photography</a
+                >
+                <a
+                  href="gallery.html?category=pre-wedding"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Pre-Wedding Shoots</a
+                >
+                <a
+                  href="gallery.html?category=cinematic-films"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Cinematic Wedding Films</a
+                >
+                <a
+                  href="gallery.html?category=maternity"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Maternity Photography</a
+                >
+                <a
+                  href="gallery.html?category=baby-kids"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Baby & Kids Photography</a
+                >
+                <a
+                  href="gallery.html?category=events"
+                  class="text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                  >Event Photography</a
+                >
+              </nav>
+            </div>
+
+            <div class="flex flex-col gap-6">
+              <h4
+                class="text-white text-lg font-light"
+                style="font-family: &quot;Georgia&quot;, serif"
+              >
+                Contact
+              </h4>
+              <div class="flex flex-col gap-4">
+                <p class="text-white/40 text-xs tracking-widest uppercase">
+                  Our Location
+                </p>
+                <p class="text-white/70 text-sm leading-relaxed">
+                  SR Film Photography Dhayari, Pune,<br />Maharashtra 411041
+                </p>
+                <a
+                  href="mailto:srfilmphotography@gmail.com"
+                  class="flex items-center gap-3 text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                >
+                  <i class="ri-mail-line text-base"></i>
+                  srfilmphotography@gmail.com
+                </a>
+                <a
+                  href="tel:+918850886835"
+                  class="flex items-center gap-3 text-white/60 text-sm hover:text-[#a88b6a] transition-colors duration-200"
+                >
+                  <i class="ri-phone-line text-base"></i>
+                  +91 87675 91139
+                </a>
+                <div class="flex items-center gap-3 text-white/60 text-sm">
+                  <i class="ri-time-line text-base"></i>
+                  Mon – Sun: 9 AM – 8 PM
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div
+            class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          >
+            <p class="text-white/40 text-xs">
+              © <span id="year"></span> SR Film Photography. All rights
+              reserved.
+            </p>
+            <div class="flex items-center gap-6">
+              <a
+                href="#"
+                class="text-white/40 text-xs hover:text-white/70 transition-colors duration-200"
+                >Terms & Conditions</a
+              >
+              <span class="text-white/20">|</span>
+              <a
+                href="#"
+                class="text-white/40 text-xs hover:text-white/70 transition-colors duration-200"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+
+          <p class="mt-5 text-center text-white/20 text-[10px] tracking-wide">
+            Designed &amp; Developed by
+            <a
+              href="#"
+              class="text-[#a88b6a] hover:text-[#d4a96a] transition-colors duration-200"
+              >Raino Studios</a
+            >
+          </p>
         </div>
+      </footer>
       </div>
+
+
+
+
+
+
+
 
     </div>
 
-    <!-- Bottom bar -->
-    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-white/40 text-xs">© 2025 SR Film Photography. All rights reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="#" class="text-white/40 text-xs hover:text-white/70 transition-colors duration-200">Terms & Conditions</a>
-        <span class="text-white/20">|</span>
-        <a href="#" class="text-white/40 text-xs hover:text-white/70 transition-colors duration-200">Privacy Policy</a>
-      </div>
-    </div>
 
-    <!-- Credit -->
-    <p class="mt-5 text-center text-white/20 text-[10px] tracking-wide">
-      Designed &amp; Developed by
-      <a href="#" class="text-[#a88b6a] hover:text-[#d4a96a] transition-colors duration-200">Raino Studios</a>
-    </p>
-  </div>
 
-</footer>
-   <script>
-  /* ── Close QR popup when clicking outside ── */
- document.addEventListener('click', function (e) {
-  const wrapper = document.getElementById('qrWrapper');
-  const popup = document.querySelector('.qr-popup');
-  if (wrapper && popup && !wrapper.contains(e.target)) {
-    popup.classList.remove('open'); // ✅ 'hidden' nahi, 'open' remove karo
-  }
-});
 
-  /* ── Navbar hide/show on scroll ── */
+  <!-- GSAP Animation Library -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+
+
+
+<!-- Smooth Scroll Library -->
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+
+<!-- Local Scripts -->
+
+<script src="./assets/js/init.js"></script>
+<script src="./assets/js/text-mask.js"></script>
+
+<script type="module" src="./assets/js/gallery.js"></script>
+
+<!-- QR Popup & Navbar Interactions -->
+<script>
+  document.addEventListener("click", function (e) {
+    const wrapper = document.getElementById("qrWrapper");
+    const popup = document.querySelector(".qr-popup");
+    if (wrapper && popup && !wrapper.contains(e.target)) {
+      popup.classList.remove("open");
+    }
+  });
+
   let lastScroll = 0;
   const navbar = document.getElementById("navbar");
 
- window.addEventListener(
-  "scroll",
-  () => {
-    const current = window.scrollY;
+  window.addEventListener(
+    "scroll",
+    () => {
+      const current = window.scrollY;
+      const popup = document.querySelector(".qr-popup");
+      
+      if (popup) popup.classList.remove("open");
 
-    /* Hide QR popup on scroll — remove 'open' class */
-    const popup = document.querySelector('.qr-popup');
-    if (popup) popup.classList.remove('open'); // ✅ 'hidden' nahi, 'open' remove karo
+      if (current <= 60) {
+        navbar.classList.remove("hidden-nav");
+      } else if (current > lastScroll) {
+        navbar.classList.add("hidden-nav");
+      } else {
+        navbar.classList.remove("hidden-nav");
+      }
+      lastScroll = current;
+    },
+    { passive: true }
+  );
+</script>
 
-    if (current <= 60) {
-      navbar.classList.remove("hidden-nav");
-    } else if (current > lastScroll) {
-      navbar.classList.add("hidden-nav");
-    } else {
-      navbar.classList.remove("hidden-nav");
-    }
-    lastScroll = current;
-  },
-  { passive: true },
-);
-
-  /* ── Mobile sidebar ── */
+<!-- Mobile Sidebar Toggle -->
+<script>
   function openSidebar() {
     document.getElementById("mobile-sidebar").classList.add("open");
     document.getElementById("sidebar-overlay").classList.remove("hidden");
     document.body.style.overflow = "hidden";
   }
+
   function closeSidebar() {
     document.getElementById("mobile-sidebar").classList.remove("open");
     document.getElementById("sidebar-overlay").classList.add("hidden");
@@ -536,50 +748,52 @@
 </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
 
 
-    <script type="module" src="./assets/js/gallery.js"></script>
-    <script src="./assets/js/mobile-menu.js"></script>
-    <script src="./assets/js/loader.js"></script>
+<!-- Footer Animated Lines -->
+<script>
+  (function () {
+    const container = document.getElementById("footer-lines");
+    const lines = [
+      { pct: 6, dur: 4.2, delay: 0, h: 80 },
+      { pct: 17, dur: 5.8, delay: 1.4, h: 60 },
+      { pct: 29, dur: 3.9, delay: 2.8, h: 90 },
+      { pct: 41, dur: 6.4, delay: 0.6, h: 70 },
+      { pct: 53, dur: 4.8, delay: 3.5, h: 75 },
+      { pct: 65, dur: 5.1, delay: 1.9, h: 65 },
+      { pct: 77, dur: 3.6, delay: 4.2, h: 85 },
+      { pct: 88, dur: 6.0, delay: 2.2, h: 55 },
+    ];
+    
+    lines.forEach(({ pct, dur, delay, h }) => {
+      const wrap = document.createElement("div");
+      wrap.className = "golden-line-wrap";
+      wrap.style.left = pct + "%";
+      
+      const bg = document.createElement("div");
+      bg.className = "golden-line-bg";
+      wrap.appendChild(bg);
+      
+      const drop = document.createElement("div");
+      drop.className = "golden-drop";
+      drop.style.height = h + "px";
+      drop.style.animationDuration = dur + "s";
+      drop.style.animationDelay = "-" + delay + "s";
+      wrap.appendChild(drop);
+      
+      container.appendChild(wrap);
+    });
+  })();
+</script>
+     
+
+
+
+
+
+    
 
    
-
-      <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
-
-      <script src="./assets/js/init.js"></script>
-    <script src="./assets/js/loader.js"></script>
-      <script>
-(function() {
-  const container = document.getElementById('footer-lines');
-  const lines = [
-    { pct: 6,  dur: 4.2, delay: 0,   h: 80 },
-    { pct: 17, dur: 5.8, delay: 1.4, h: 60 },
-    { pct: 29, dur: 3.9, delay: 2.8, h: 90 },
-    { pct: 41, dur: 6.4, delay: 0.6, h: 70 },
-    { pct: 53, dur: 4.8, delay: 3.5, h: 75 },
-    { pct: 65, dur: 5.1, delay: 1.9, h: 65 },
-    { pct: 77, dur: 3.6, delay: 4.2, h: 85 },
-    { pct: 88, dur: 6.0, delay: 2.2, h: 55 },
-  ];
-  lines.forEach(({ pct, dur, delay, h }) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'golden-line-wrap';
-    wrap.style.left = pct + '%';
-    const bg = document.createElement('div');
-    bg.className = 'golden-line-bg';
-    wrap.appendChild(bg);
-    const drop = document.createElement('div');
-    drop.className = 'golden-drop';
-    drop.style.height = h + 'px';
-    drop.style.animationDuration = dur + 's';
-    drop.style.animationDelay = '-' + delay + 's';
-    wrap.appendChild(drop);
-    container.appendChild(wrap);
-  });
-})();
-</script>
+    
   </body>
 </html>

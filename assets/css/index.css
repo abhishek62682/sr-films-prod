@@ -547,3 +547,47 @@
 
   #gallery .gallery-bottom .item-b3 { grid-column: 1 / 3; }
 }
+
+
+.heroSwiper { width: 100%; height: 100%; }
+        .swiper-wrapper { width: 100%; height: 100%; }
+        .swiper-slide { width: 100%; height: 100%; }
+        .swiper-pagination-bullet {
+          background: rgba(255,255,255,0.5);
+          width: 10px; height: 10px;
+          transition: all cubic-bezier(0.19,1,0.22,1) 0.5s;
+          opacity: 0.8;
+          
+        }
+        .swiper-pagination-bullet-active {
+          background: white; width: 30px;
+          border-radius: 24px; opacity: 1;
+        }
+
+
+
+        /* Popup hidden by default */
+  .qr-popup {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 99999; /* Ensure it's above everything */
+}
+
+  /* Desktop: hover on the whole wrap keeps popup open */
+  @media (min-width: 768px) {
+    .qr-wrap:hover .qr-popup {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      z-index: 9999999999999;
+    }
+  }
+
+  /* Mobile: toggle via JS class */
+  .qr-popup.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
