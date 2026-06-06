@@ -330,6 +330,9 @@
   .z-200 {
     z-index: 200;
   }
+  .z-300 {
+    z-index: 300;
+  }
   .z-999 {
     z-index: 999;
   }
@@ -357,6 +360,9 @@
   .z-\[9999\] {
     z-index: 9999;
   }
+  .z-\[999999\] {
+    z-index: 999999;
+  }
   .row-span-2 {
     grid-row: span 2 / span 2;
   }
@@ -383,6 +389,9 @@
   }
   .mx-auto {
     margin-inline: auto;
+  }
+  .mt-0 {
+    margin-top: calc(var(--spacing) * 0);
   }
   .mt-0\.5 {
     margin-top: calc(var(--spacing) * 0.5);
